@@ -1,27 +1,21 @@
-body {
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-
 #gallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
 }
 
-#gallery div {
-    flex: 0 0 calc(12.5% - 10px); /* Ogni colonna occupa il 12.5% della larghezza - margine */
-    margin: 5px;
-    box-sizing: border-box;
+.grid-item {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd; /* Aggiungi uno stile del bordo se lo desideri */
+    box-sizing: border-box; /* Assicura che il padding non aumenti le dimensioni dell'elemento */
+    height: fit-content;
 }
 
 #gallery img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    display: block;
-}
-
-#gallery p {
-    text-align: center;
-    margin: 5px 0;
+    max-height: 100%; /* Impedisce alle immagini di superare l'altezza della cella */
+    display: block; /* Impedisce eventuali spazi bianchi sotto le immagini */
+    margin: 0 auto; /* Centra l'immagine all'interno della cella */
 }
