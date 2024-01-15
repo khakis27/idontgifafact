@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    display: flex;
+    overflow: hidden;
+}
+
+.fixed-column {
+    flex: 0 0 200px;
+    background-color: #f0f0f0;
+
+    /* Aggiungi questi stili per centrare il testo verticalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
