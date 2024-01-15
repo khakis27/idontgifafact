@@ -3,29 +3,25 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
-.container {
+
+#gallery {
     display: flex;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
-.fixed-column {
-    flex: 0 0 200px;
-    background-color: white;
-
-    /* Aggiungi questi stili per centrare il testo verticalmente */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+#gallery div {
+    flex: 0 0 calc(12.5% - 10px); /* Ogni colonna occupa il 12.5% della larghezza - margine */
+    margin: 5px;
+    box-sizing: border-box;
 }
 
-.column {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
+#gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.column img {
-    max-width: 100%; /* Imposta la larghezza massima al 100% della larghezza del contenitore */
-    height: auto; /* Imposta l'altezza automaticamente rispetto alla larghezza */
+#gallery p {
+    text-align: center;
+    margin: 5px 0;
 }

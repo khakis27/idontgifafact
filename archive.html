@@ -1,58 +1,35 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Il tuo Sito Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Gallery</title>
 </head>
 <body>
-    <div class="container">
-        <div class="fixed-column">
-            <!-- Lista di link nella colonna fissa -->
-            <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <!-- Aggiungi altri link secondo necessità -->
-            </ul>
-        </div>
-        <div class="column">
-            <!-- Contenuto della colonna 2 con un'immagine e una scritta -->
-            <img src="assets/img (1).jpg" alt="Immagine Colonna 2">
-            <p>Testo colonna 2</p>
-        </div>
-        <div class="column">
-            <!-- Contenuto della colonna 3 -->
-            <img src="assets/img (2).jpg" alt="Immagine Colonna 2">
-            <p>Testo colonna 3</p>
-        </div>
-        <div class="column">
-            <!-- Contenuto della colonna 3 -->
-            <img src="assets/img (3).jpg" alt="Immagine Colonna 2">
-            <p>Testo colonna 4</p>
-        </div>
-        <div class="column">
-            <!-- Contenuto della colonna 3 -->
-            <img src="assets/img (4).jpg" alt="Immagine Colonna 2">
-            <p>Testo colonna 5</p>
-        </div>
-        <div class="column">
-            <!-- Contenuto della colonna 3 -->
-            <img src="assets/img (5).jpg" alt="Immagine Colonna 2">
-            <p>Testo colonna 6</p>
-        </div>
-        <div class="column">
-            <!-- Contenuto della colonna 3 -->
-            <img src="assets/img (6).jpg" alt="Immagine Colonna 2">
-            <p>Testo colonna 7</p>
-        </div>
-        <div class="column">
-            <!-- Contenuto della colonna 3 -->
-            <img src="assets/img (7).jpg" alt="Immagine Colonna 2">
-            <p>Testo colonna 8</p>
-        </div>
-        <!-- Ripeti il blocco per le altre colonne -->
+    <div id="categories">
+        <label>
+            <input type="checkbox" class="category-checkbox" data-category="category1"> Category 1
+        </label>
+        <label>
+            <input type="checkbox" class="category-checkbox" data-category="category2"> Category 2
+        </label>
+        <label>
+            <input type="checkbox" class="category-checkbox" data-category="category3"> Category 2
+        </label>
+        <label>
+            <input type="checkbox" class="category-checkbox" data-category="category4"> Category 2
+        </label>
+        <label>
+            <input type="checkbox" class="category-checkbox" data-category="category5"> Category 2
+        </label>
+        <!-- Add more categories as needed -->
     </div>
+    
+    <div id="gallery">
+        <!-- Images will be dynamically added here using JavaScript -->
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
