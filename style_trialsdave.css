@@ -11,7 +11,7 @@ body {
 .fixed-column {
     flex: 0 0 200px;
     background-color: white;
-
+    border: 1px solid #000000;
     /* Aggiungi questi stili per centrare il testo verticalmente */
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@ body {
 .column {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
 }
 
 .column img {
