@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masonry Grid with Categories</title>
     <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
         .masonry-grid {
             column-count: 8;
             column-gap: 10px;
@@ -42,6 +45,51 @@
             margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
         }
 
+        .grid-item h3:hover {
+		animation: rainbow 2.5s linear;
+		animation-iteration-count: infinite;
+        }
+
+        @keyframes rainbow{
+		100%,0%{
+			color: rgb(255,0,0);
+		}
+		8%{
+			color: rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+		}
+		66%{
+			color: rgb(0,0,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+		}
+}
+        
+
     </style>
 </head>
 <body>
@@ -55,6 +103,7 @@
     <div class="masonry-grid" id="imageGrid"></div>
 
     <script type="module" src="https://cdn.skypack.dev/masonry-layout"></script>
+    <script type="module" src="https://cdn.skypack.dev/@fancyapps/fancybox"></script>
     <script type="module">
         // Dati delle immagini con categorie, titolo e paragrafo
         const imageArray = [
