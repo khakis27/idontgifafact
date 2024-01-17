@@ -125,6 +125,8 @@
             // Aggiungi altre immagini con categorie, titolo e paragrafo qui
         ];
 
+        imageArray.sort(() => Math.random() - 0.5);
+
         document.addEventListener('DOMContentLoaded', function() {
             const imageGrid = document.getElementById('imageGrid');
             const checkboxes = document.querySelectorAll('.category-checkbox input');
