@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masonry Grid with Categories</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .masonry-grid {
+        column-count: 8;
+        column-gap: 10px;
+      }
+
+      .grid-item {
+        break-inside: avoid;
+        margin-bottom: 10px;
+        position: relative;
+      }
+
+      .grid-item img {
+        width: 100%;
+        display: block;
+      }
+
+      .category-checkbox {
+        margin-right: 10px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .grid-item h3 {
+        font-size: 18px;
+        margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
+        color: #333;
+      }
+
+      /* Stili per il paragrafo (p) */
+      .grid-item p {
+        font-size: 14px;
+        color: #666;
+        margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
+      }
+
+      .grid-item h3:hover {
+        animation: rainbow 2.5s linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes rainbow {
+        100%,
+        0% {
+          color: rgb(255, 0, 0);
+        }
+        8% {
+          color: rgb(255, 127, 0);
+        }
+        16% {
+          color: rgb(255, 255, 0);
+        }
+        25% {
+          color: rgb(127, 255, 0);
+        }
+        33% {
+          color: rgb(0, 255, 0);
+        }
+        41% {
+          color: rgb(0, 255, 127);
+        }
+        50% {
+          color: rgb(0, 255, 255);
+        }
+        58% {
+          color: rgb(0, 127, 255);
+        }
+        66% {
+          color: rgb(0, 0, 255);
+        }
+        75% {
+          color: rgb(127, 0, 255);
+        }
+        83% {
+          color: rgb(255, 0, 255);
+        }
+        91% {
+          color: rgb(255, 0, 127);
+        }
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .overlay img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+
+      .overlay-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+
+      .overlay-nav button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label class="category-checkbox"
+        ><input type="checkbox" id="category1" /> Category 1</label
+      >
+      <label class="category-checkbox"
+        ><input type="checkbox" id="category2" /> Category 2</label
+      >
+      <label class="category-checkbox"
+        ><input type="checkbox" id="category3" /> Category 3</label
+      >
+      <!-- Aggiungi altri checkbox per le categorie qui -->
+    </div>
+
+    <div class="masonry-grid" id="imageGrid"></div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-nav">
+            <button id="prevButton">&lt;</button>
+            <button id="nextButton">&gt;</button>
+        </div>
+        <img id="overlayImage" src="" alt="Overlay Image">
+    </div>
+
+    <script type="module" src="https://cdn.skypack.dev/masonry-layout"></script>
+    <script type="module">
+      // Dati delle immagini con categorie, titolo e paragrafo
+      const imageArray = [
+        {
+          id: 1,
+          src: "assets/img (20).jpg",
+          category: ["category1", "category2"],
+          title: "Title 1",
+          paragraph: "Lorem ipsum 1",
+        },
+        {
+          id: 2,
+          src: "assets/img (21).jpg",
+          category: ["category2", "category3"],
+          title: "Title 2",
+          paragraph: "Lorem ipsum 2",
+        },
+        {
+          id: 3,
+          src: "assets/img (22).jpg",
+          category: ["category1", "category2"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+        },
+        {
+          id: 4,
+          src: "assets/img (23).jpg",
+          category: ["category2", "category3"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+        },
+        {
+          id: 5,
+          src: "assets/img (24).jpg",
+          category: ["category1", "category2"],
+          title: "Title 5",
+          paragraph: "Lorem ipsum 5",
+        },
+        {
+          id: 6,
+          src: "assets/img (25).jpg",
+          category: ["category2", "category3"],
+          title: "Title 6",
+          paragraph: "Lorem ipsum 6",
+        },
+        {
+          id: 7,
+          src: "assets/img (26).jpg",
+          category: ["category1", "category2"],
+          title: "Title 7",
+          paragraph: "Lorem ipsum 7",
+        },
+        {
+          id: 8,
+          src: "assets/img (27).jpg",
+          category: ["category2", "category3"],
+          title: "Title 8",
+          paragraph: "Lorem ipsum 8",
+        },
+        {
+          id: 9,
+          src: "assets/img (28).jpg",
+          category: ["category1", "category2"],
+          title: "Title 9",
+          paragraph: "Lorem ipsum 9",
+        },
+        {
+          id: 10,
+          src: "assets/img (29).jpg",
+          category: ["category2", "category3"],
+          title: "Title 10",
+          paragraph: "Lorem ipsum 10",
+        },
+        {
+          id: 6,
+          src: "assets/img (25).jpg",
+          category: ["category2", "category3"],
+          title: "Title 6",
+          paragraph: "Lorem ipsum 6",
+        },
+        {
+          id: 7,
+          src: "assets/img (26).jpg",
+          category: ["category1", "category2"],
+          title: "Title 7",
+          paragraph: "Lorem ipsum 7",
+        },
+        {
+          id: 8,
+          src: "assets/img (27).jpg",
+          category: ["category2", "category3"],
+          title: "Title 8",
+          paragraph: "Lorem ipsum 8",
+        },
+        {
+          id: 9,
+          src: "assets/img (28).jpg",
+          category: ["category1", "category2"],
+          title: "Title 9",
+          paragraph: "Lorem ipsum 9",
+        },
+        {
+          id: 10,
+          src: "assets/img (29).jpg",
+          category: ["category2", "category3"],
+          title: "Title 10",
+          paragraph: "Lorem ipsum 10",
+        },
+        // Aggiungi altre immagini con categorie, titolo e paragrafo qui
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageGrid = document.getElementById("imageGrid");
+        const checkboxes = document.querySelectorAll(
+          ".category-checkbox input"
+        );
+
+        function updateGrid() {
+          const selectedCategories = Array.from(checkboxes)
+            .filter((checkbox) => checkbox.checked)
+            .map((checkbox) => checkbox.id);
+
+          imageArray.forEach((image) => {
+            const gridItem = document.getElementById(`image-${image.id}`);
+
+            if (
+              selectedCategories.length === 0 ||
+              selectedCategories.every((category) =>
+                image.category.includes(category)
+              )
+            ) {
+              // Mostra l'immagine
+              gridItem.classList.remove("hidden");
+            } else {
+              // Nascondi l'immagine
+              gridItem.classList.add("hidden");
+            }
+          });
+
+          // Inizializza Masonry sulla griglia appena aggiornata
+          new Masonry(".masonry-grid", {
+            itemSelector: ".grid-item:not(.hidden)",
+            columnWidth: ".grid-item:not(.hidden)",
+            gutter: 10,
+          });
+        }
+
+        // Genera il markup HTML per le immagini
+        const gridMarkup = imageArray
+          .map(
+            (image) =>
+              `<div class="grid-item" id="image-${
+                image.id
+              }" data-categories="${image.category.join(" ")}">
+                    <img src="${image.src}" alt="Image">
+                    <h3>${image.title}</h3>
+                    <p>${image.paragraph}</p>
+                </div>`
+          )
+          .join("");
+
+        // Aggiorna il contenuto della griglia
+        imageGrid.innerHTML = gridMarkup;
+
+        // Aggiungi un listener per ogni checkbox
+        checkboxes.forEach((checkbox) =>
+          checkbox.addEventListener("change", updateGrid)
+        );
+
+        let currentImageIndex = 0;
+
+            function showOverlay(imageSrc) {
+                const overlay = document.getElementById('overlay');
+                const overlayImage = document.getElementById('overlayImage');
+
+                // Imposta l'immagine dell'overlay
+                overlayImage.src = imageSrc;
+
+                // Mostra l'overlay
+                overlay.style.display = 'flex';
+            }
+
+            function hideOverlay() {
+                const overlay = document.getElementById('overlay');
+
+                // Nascondi l'overlay
+                overlay.style.display = 'none';
+            }
+
+            function updateOverlay() {
+                const currentImage = imageArray[currentImageIndex];
+                showOverlay(currentImage.src);
+            }
+
+            // Aggiungi un listener per il clic su ogni immagine
+            const gridItems = document.querySelectorAll('.grid-item');
+            gridItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    currentImageIndex = index;
+                    updateOverlay();
+                });
+            });
+
+            // Aggiungi un listener per il clic sul pulsante "Previous"
+            const prevButton = document.getElementById('prevButton');
+            prevButton.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex - 1 + imageArray.length) % imageArray.length;
+                updateOverlay();
+            });
+
+            // Aggiungi un listener per il clic sul pulsante "Next"
+            const nextButton = document.getElementById('nextButton');
+            nextButton.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex + 1) % imageArray.length;
+                updateOverlay();
+            });
+
+            // Aggiungi un listener per chiudere l'overlay cliccando al di fuori dell'immagine
+            const overlay = document.getElementById('overlay');
+            overlay.addEventListener('click', function(event) {
+                if (event.target === this) {
+                    hideOverlay();
+                }
+            });
+
+        // Inizializza la griglia alla prima apertura della pagina
+        updateGrid();
+      });
+    </script>
+  </body>
+</html>
