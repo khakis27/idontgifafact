@@ -102,10 +102,15 @@
         align-items: center;
       }
 
-      .overlay img {
-        max-width: 80%;
-        max-height: 80%;
-      }
+      .overlay-img {
+  max-width: 80%;
+  max-height: 80%;
+  display: none;
+}
+
+.overlay-img:first-child {
+  display: block;
+}
 
       .overlay-nav {
         position: absolute;
@@ -123,6 +128,10 @@
         font-size: 1.5em;
         cursor: pointer;
       }
+
+      .hidden {
+  display: none;
+}
     </style>
   </head>
   <body>
@@ -142,11 +151,11 @@
     <div class="masonry-grid" id="imageGrid"></div>
 
     <div class="overlay" id="overlay">
-        <div class="overlay-nav">
-            <button id="prevButton">&lt;</button>
-            <button id="nextButton">&gt;</button>
-        </div>
-        <img id="overlayImage" src="" alt="Overlay Image">
+      <div class="overlay-nav">
+        <button id="prevButton">&lt;</button>
+        <button id="nextButton">&gt;</button>
+      </div>
+      <img id="overlayImage" src="" alt="Overlay Image" />
     </div>
 
     <script type="module" src="https://cdn.skypack.dev/masonry-layout"></script>
@@ -159,6 +168,11 @@
           category: ["category1", "category2"],
           title: "Title 1",
           paragraph: "Lorem ipsum 1",
+          series: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+        ]
         },
         {
           id: 2,
@@ -321,59 +335,81 @@
 
         let currentImageIndex = 0;
 
-            function showOverlay(imageSrc) {
-                const overlay = document.getElementById('overlay');
-                const overlayImage = document.getElementById('overlayImage');
+        function showOverlay(images) {
+  const overlay = document.getElementById("overlay");
+  const overlayNav = document.querySelector(".overlay-nav");
 
-                // Imposta l'immagine dell'overlay
-                overlayImage.src = imageSrc;
+  // Rimuovi eventuali immagini esistenti nell'overlay
+  while (overlayNav.nextSibling) {
+    overlayNav.nextSibling.remove();
+  }
 
-                // Mostra l'overlay
-                overlay.style.display = 'flex';
-            }
+  // Aggiungi un elemento img per ogni immagine nella serie
+  images.forEach((imageSrc, index) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = imageSrc;
+    imgElement.alt = "Overlay Image";
+    imgElement.classList.add("overlay-img");
 
-            function hideOverlay() {
-                const overlay = document.getElementById('overlay');
+    // Rimuovi la classe hidden per l'immagine corrente
+    if (index === 0) {
+      imgElement.classList.remove("hidden");
+    } else {
+      // Nascondi le immagini successive alla prima
+      imgElement.classList.add("hidden");
+    }
 
-                // Nascondi l'overlay
-                overlay.style.display = 'none';
-            }
+    // Aggiungi l'elemento img all'overlay
+    overlay.insertBefore(imgElement, overlayNav.nextSibling);
+  });
 
-            function updateOverlay() {
-                const currentImage = imageArray[currentImageIndex];
-                showOverlay(currentImage.src);
-            }
+  // Mostra l'overlay
+  overlay.style.display = "flex";
+}
 
-            // Aggiungi un listener per il clic su ogni immagine
-            const gridItems = document.querySelectorAll('.grid-item');
-            gridItems.forEach((item, index) => {
-                item.addEventListener('click', function() {
-                    currentImageIndex = index;
-                    updateOverlay();
-                });
-            });
+function hideOverlay() {
+  const overlay = document.getElementById("overlay");
+  // Nascondi l'overlay
+  overlay.style.display = "none";
+}
 
-            // Aggiungi un listener per il clic sul pulsante "Previous"
-            const prevButton = document.getElementById('prevButton');
-            prevButton.addEventListener('click', function() {
-                currentImageIndex = (currentImageIndex - 1 + imageArray.length) % imageArray.length;
-                updateOverlay();
-            });
+        function updateOverlay() {
+    const currentImage = imageArray[currentImageIndex];
+    const imagesToShow = currentImage.series || [currentImage.src];
+    showOverlay(imagesToShow);
+  }
 
-            // Aggiungi un listener per il clic sul pulsante "Next"
-            const nextButton = document.getElementById('nextButton');
-            nextButton.addEventListener('click', function() {
-                currentImageIndex = (currentImageIndex + 1) % imageArray.length;
-                updateOverlay();
-            });
+        // Aggiungi un listener per il clic su ogni immagine
+        const gridItems = document.querySelectorAll(".grid-item");
+        gridItems.forEach((item, index) => {
+          item.addEventListener("click", function () {
+            currentImageIndex = index;
+            updateOverlay();
+          });
+        });
 
-            // Aggiungi un listener per chiudere l'overlay cliccando al di fuori dell'immagine
-            const overlay = document.getElementById('overlay');
-            overlay.addEventListener('click', function(event) {
-                if (event.target === this) {
-                    hideOverlay();
-                }
-            });
+        // Aggiungi un listener per il clic sul pulsante "Previous"
+        const prevButton = document.getElementById("prevButton");
+        prevButton.addEventListener("click", function () {
+          currentImageIndex =
+            (currentImageIndex - 1 + imageArray.length) % imageArray.length;
+          updateOverlay();
+        });
+
+        // Aggiungi un listener per il clic sul pulsante "Next"
+        const nextButton = document.getElementById("nextButton");
+        nextButton.addEventListener("click", function () {
+          currentImageIndex = (currentImageIndex + 1) % imageArray.length;
+          updateOverlay();
+        });
+
+        // Aggiungi un listener per chiudere l'overlay cliccando al di fuori dell'immagine
+        const overlay = document.getElementById("overlay");
+        overlay.addEventListener("click", function (event) {
+          if (event.target === this) {
+            hideOverlay();
+          }
+        });
 
         // Inizializza la griglia alla prima apertura della pagina
         updateGrid();
