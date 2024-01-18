@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+      <link rel="icon" href="../icon.png">
+      <title>Mago EnimòS</title>
+      <link rel="stylesheet" href="gallery.css">
+      <link rel="stylesheet" href="../HEADER.css">
+</head>
+<body>
+
+<header id="myHeader">
+  <div class="menu">
+    <div class="col-3"><a href="../HOME/home.html">HOME</a></div>
+    <div class="col-3"><a href="gallery.html">GALLERY</a></div>
+    <div class="col-3"><a href="../ABOUT_ME/about_me.html">ABOUT ME</a></div>
+    <div class="col-3"><button id="button" name="tendina"><a href="../SPETTACOLI/spettacoli.html">SPETTACOLI</a></button>
+      <div class="sub-menu">
+        <a href="../SPETTACOLI/SHOW/show.html">EnimòS' Show</a>
+        <a href="../SPETTACOLI/COMPLEANNI/compleanni.html">Feste  di Compleanno</a>
+        <a href="../SPETTACOLI/TEATRO/teatro.html">In Teatro</a>
+        <a href="../SPETTACOLI/GRANDI/grandi.html">Per i Più Grandi</a>
+    </div>
+  </div>
+</header>
+
+<!--SCRIPT TENDINA FISSA-->
+<script type="text/javascript">
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+
+
+<div class="content"> <!--EVERYTHING IN THE PAGE except footer-->
+
+  <div align="center" class="photogallery">
+      <img src="image00001.jpeg" onclick="openModal();currentSlide(1)" class="cursor">
+      <img src="image00002.jpeg" onclick="openModal();currentSlide(2)" class="cursor">
+      <img src="image00003.jpeg" onclick="openModal();currentSlide(3)" class="cursor">
+      <img src="image00004.jpeg" onclick="openModal();currentSlide(4)" class="cursor">
+      <img src="image00005.jpeg" onclick="openModal();currentSlide(5)" class="cursor">
+      <img src="image00006.jpeg" onclick="openModal();currentSlide(6)" class="cursor">
+      <img src="image00007.jpeg" onclick="openModal();currentSlide(7)" class="cursor">
+      <img src="image00008.jpeg" onclick="openModal();currentSlide(8)" class="cursor">
+      <img src="image00009.jpeg" onclick="openModal();currentSlide(9)" class="cursor">
+      <img src="image000010.jpeg" onclick="openModal();currentSlide(10)" class="cursor">
+      <img src="image000011.jpeg" onclick="openModal();currentSlide(11)" class="cursor">
+      <img src="image000012.jpeg" onclick="openModal();currentSlide(12)" class="cursor">
+      <img src="image000013.jpeg" onclick="openModal();currentSlide(13)" class="cursor">
+      <img src="image000014.jpeg" onclick="openModal();currentSlide(14)" class="cursor">
+      <img src="image000015.jpeg" onclick="openModal();currentSlide(15)" class="cursor">
+      <img src="image000016.jpeg" onclick="openModal();currentSlide(16)" class="cursor">
+      <img src="image000017.jpeg" onclick="openModal();currentSlide(17)" class="cursor">
+      <img src="image000018.jpeg" onclick="openModal();currentSlide(18)" class="cursor">
+      <img src="image000019.jpeg" onclick="openModal();currentSlide(19)" class="cursor">
+      <img src="image000020.jpeg" onclick="openModal();currentSlide(20)" class="cursor">
+      <img src="image000021.jpeg" onclick="openModal();currentSlide(21)" class="cursor">
+      <img src="image000022.jpeg" onclick="openModal();currentSlide(22)" class="cursor">
+      <img src="image000023.jpeg" onclick="openModal();currentSlide(23)" class="cursor">
+      <img src="image000024.jpeg" onclick="openModal();currentSlide(24)" class="cursor">
+  </div>
+
+
+    <div id="myModal" class="modal">
+      <!--close button--> <span class="close cursor" onclick="closeModal()">&times;</span>
+
+      <div class="modal-content">
+
+          <div class="mySlides">
+            <img src="image00001.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00002.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00003.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00004.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00005.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00006.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00007.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00008.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image00009.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000010.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000011.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000012.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000013.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000014.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000015.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000016.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000017.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000018.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000019.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000020.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000021.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000022.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000023.jpeg" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <img src="image000024.jpeg" style="width:100%">
+          </div>
+
+          <!--pulsanti prima e dopo-->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+  </div>
+
+
+<!--SCRIPT MODAL-->
+  <script>
+  function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+  }
+</script>
+
+
+</div>
+
+<footer>
+  	MAGO ENIMÒS
+    <br>
+  	simoneefumagalli@gmail.com  |  3319306770
+	  <br>
+  	<a href="https://www.facebook.com/magoenimos" class="facebook"><img src="../facebook.png"  title="facebook" alt="Facebook icon"></a>
+</footer>
+
+  </body>
+</html>
