@@ -151,6 +151,7 @@
 
     <script type="module" src="https://cdn.skypack.dev/masonry-layout"></script>
     <script type="module">
+      console.log("diopporco!");
       // Dati delle immagini con categorie, titolo e paragrafo
       const imageArray = [
         {
@@ -159,7 +160,7 @@
           category: ["category1", "category2"],
           title: "Title 1",
           paragraph: "Lorem ipsum 1",
-          series: 1
+          ciao: 1
         },
         {
           id: 2,
@@ -167,7 +168,7 @@
           category: ["category2", "category3"],
           title: "Title 2",
           paragraph: "Lorem ipsum 2",
-          series: 1
+          ciao: 2
         },
         {
           id: 3,
@@ -175,7 +176,7 @@
           category: ["category1", "category2"],
           title: "Title 3",
           paragraph: "Lorem ipsum 3",
-          series: 1
+          ciao: 1
         },
         {
           id: 4,
@@ -183,7 +184,7 @@
           category: ["category2", "category3"],
           title: "Title 4",
           paragraph: "Lorem ipsum 4",
-          series: 1
+          ciao: 2
         },
         {
           id: 5,
@@ -191,7 +192,7 @@
           category: ["category1", "category2"],
           title: "Title 5",
           paragraph: "Lorem ipsum 5",
-          series: 1
+          ciao: 1
         },
         {
           id: 6,
@@ -199,7 +200,7 @@
           category: ["category2", "category3"],
           title: "Title 6",
           paragraph: "Lorem ipsum 6",
-          series: 2
+          ciao: 2
         },
         {
           id: 7,
@@ -207,7 +208,7 @@
           category: ["category1", "category2"],
           title: "Title 7",
           paragraph: "Lorem ipsum 7",
-          series: 2
+          ciao: 1
         },
         {
           id: 8,
@@ -215,7 +216,7 @@
           category: ["category2", "category3"],
           title: "Title 8",
           paragraph: "Lorem ipsum 8",
-          series: 2
+          ciao: 2
         },
         {
           id: 9,
@@ -223,7 +224,7 @@
           category: ["category1", "category2"],
           title: "Title 9",
           paragraph: "Lorem ipsum 9",
-          series: 2
+          ciao: 1
         },
         {
           id: 10,
@@ -231,47 +232,47 @@
           category: ["category2", "category3"],
           title: "Title 10",
           paragraph: "Lorem ipsum 10",
-          series: 2
+          ciao: 2
         },
         {
-          id: 6,
+          id: 11,
           src: "assets/img (25).jpg",
           category: ["category2", "category3"],
           title: "Title 6",
           paragraph: "Lorem ipsum 6",
-          series: 2
+          ciao: 3
         },
         {
-          id: 7,
+          id: 12,
           src: "assets/img (26).jpg",
           category: ["category1", "category2"],
           title: "Title 7",
           paragraph: "Lorem ipsum 7",
-          series: 2
+          ciao: 3
         },
         {
-          id: 8,
+          id: 13,
           src: "assets/img (27).jpg",
           category: ["category2", "category3"],
           title: "Title 8",
           paragraph: "Lorem ipsum 8",
-          series: 2
+          ciao: 3
         },
         {
-          id: 9,
+          id: 14,
           src: "assets/img (28).jpg",
           category: ["category1", "category2"],
           title: "Title 9",
           paragraph: "Lorem ipsum 9",
-          series: 2
+          ciao: 3
         },
         {
-          id: 10,
+          id: 15,
           src: "assets/img (29).jpg",
           category: ["category2", "category3"],
           title: "Title 10",
           paragraph: "Lorem ipsum 10",
-          series: 2
+          ciao: 3
         },
         // Aggiungi altre immagini con categorie, titolo e paragrafo qui
       ];
@@ -373,9 +374,15 @@
             prevButton.addEventListener('click', function() {
                 //currentImageIndex = (currentImageIndex - 1 + imageArray.length) % imageArray.length;
                 let seriesIndex = currentImageIndex;
-                currentImageIndex = currentImageIndex - 1;
-                while (imageArray[seriesIndex].series != imageArray[currentImageIndex].series) {
-                  if (currentImageIndex - 1 > 0) {
+                if (currentImageIndex > 0) {
+                  currentImageIndex = currentImageIndex - 1;
+                } else {
+                  currentImageIndex = imageArray.length;
+                }
+                
+                while (imageArray[seriesIndex].ciao != imageArray[currentImageIndex].ciao) {
+                
+                  if (currentImageIndex > 0) {
                     currentImageIndex = currentImageIndex -1;
                   } 
                   else {
@@ -390,9 +397,14 @@
             nextButton.addEventListener('click', function() {
                 //currentImageIndex = (currentImageIndex + 1) % imageArray.length;
                 let seriesIndex = currentImageIndex;
-                currentImageIndex = currentImageIndex + 1;
-                while (imageArray[seriesIndex].series != imageArray[currentImageIndex].series) {
-                  if (currentImageIndex + 1 < imageArray.length) {
+                if (currentImageIndex < imageArray.length) {
+                    currentImageIndex = currentImageIndex + 1;
+                  } else {
+                    currentImageIndex = 0;
+                  }
+
+                while (imageArray[seriesIndex].ciao != imageArray[currentImageIndex].ciao) {
+                  if (currentImageIndex < imageArray.length) {
                     currentImageIndex = currentImageIndex + 1;
                   } 
                   else {
