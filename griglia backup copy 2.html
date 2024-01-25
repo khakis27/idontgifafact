@@ -228,9 +228,7 @@
         const gridMarkup = imageArray
           .map(
             (image) =>
-              `<div class="grid-item" id="image-${
-                image.id
-              }" data-categories="${image.category.join(" ")}">
+              `<div class="grid-item" id="image-${image.id}" data-categories="${image.category.join(" ")}">
                     <img src="${image.src}" alt="Image">
                     <h3>${image.title}</h3>
                     <p>${image.paragraph}</p>
