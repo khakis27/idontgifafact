@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Masonry Grid with Categories</title>
+
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
@@ -12,44 +13,44 @@
         column-count: 8;
         column-gap: 10px;
       }
-
+      
       .grid-item {
         break-inside: avoid;
         margin-bottom: 10px;
         position: relative;
       }
-
+      
       .grid-item img {
         width: 100%;
         display: block;
       }
-
+      
       .category-checkbox {
         margin-right: 10px;
       }
-
+      
       .hidden {
         display: none;
       }
-
+      
       .grid-item h3 {
         font-size: 18px;
         margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
         color: #333;
       }
-
+      
       /* Stili per il paragrafo (p) */
       .grid-item p {
         font-size: 14px;
         color: #666;
         margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
       }
-
+      
       .grid-item h3:hover {
         animation: rainbow 2.5s linear;
         animation-iteration-count: infinite;
       }
-
+      
       @keyframes rainbow {
         100%,
         0% {
@@ -89,24 +90,23 @@
           color: rgb(255, 0, 127);
         }
       }
-
+      
       .slideshow-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 9999;
-        display: none;
-      }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: none;
+}
 
-      .mySlides {
-        display: none;
-      }
-
-      .prev,
-      .next {
+.mySlides {
+  display: none;
+}
+      
+      .prev, .next {
         cursor: pointer;
         position: absolute;
         top: 50%;
@@ -120,17 +120,18 @@
         border-radius: 0 3px 3px 0;
         user-select: none;
       }
-
+      
       .next {
         right: 0;
         border-radius: 3px 0 0 3px;
       }
-
-      .prev:hover,
-      .next:hover {
+      
+      .prev:hover, .next:hover {
         background-color: rgba(0, 0, 0, 0.8);
       }
-    </style>
+      
+      </style>
+
   </head>
   <body>
     <div>
@@ -154,51 +155,6 @@
     <script type="module" src="https://cdn.skypack.dev/masonry-layout"></script>
     <script type="module">
       // Dati delle immagini con categorie, titolo e paragrafo
-      function showSlideshow(imageId) {
-        const overlay = document.getElementById(`slideshow-${imageId}`);
-        overlay.style.display = "flex"; // or "block" based on your styling preference
-      }
-
-      function closeSlideshow(imageId) {
-          const overlay = document.getElementById(`slideshow-${imageId}`);
-          overlay.style.display = "none";
-        }
-
-      function createSlideshow(slideshowContainer, images) {
-        let slideIndex = 0;
-
-        function showSlides(index) {
-          const slides = slideshowContainer.getElementsByClassName("mySlides");
-          if (index >= slides.length) {
-            slideIndex = 0;
-          } else if (index < 0) {
-            slideIndex = slides.length - 1;
-          } else {
-            slideIndex = index;
-          }
-
-          for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-
-          slides[slideIndex].style.display = "block";
-        }
-
-
-        function plusSlides(n) {
-          showSlides(slideIndex + n);
-        }
-
-        const prevButton = slideshowContainer.getElementsByClassName("prev")[0];
-        const nextButton = slideshowContainer.getElementsByClassName("next")[0];
-
-        prevButton.addEventListener("click", () => plusSlides(-1));
-        nextButton.addEventListener("click", () => plusSlides(1));
-
-        showSlides(slideIndex);        
-
-      }
-
       const imageArray = [
         {
           id: 1,
@@ -206,11 +162,7 @@
           category: ["category1", "category2"],
           title: "Title 1",
           paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
+          slideshowImages: ["assets/img (11).jpg", "assets/img (12).jpg", "assets/img (13).jpg"],
         },
         {
           id: 2,
@@ -218,11 +170,7 @@
           category: ["category2", "category3"],
           title: "Title 2",
           paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
+          slideshowImages: ["assets/img (14).jpg", "assets/img (15).jpg", "assets/img (16.jpg"],
         },
         {
           id: 3,
@@ -230,11 +178,7 @@
           category: ["category3", "category4"],
           title: "Title 3",
           paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
+          slideshowImages: ["assets/img (17).jpg", "assets/img (18).jpg", "assets/img (19).jpg"],
         },
         {
           id: 4,
@@ -242,19 +186,13 @@
           category: ["category4", "category1"],
           title: "Title 4",
           paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
+          slideshowImages: ["assets/img (20).jpg", "assets/img (21).jpg", "assets/img (22).jpg"],
         },
       ];
 
       document.addEventListener("DOMContentLoaded", function () {
         const imageGrid = document.getElementById("imageGrid");
-        const checkboxes = document.querySelectorAll(
-          ".category-checkbox input"
-        );
+        const checkboxes = document.querySelectorAll(".category-checkbox input");
 
         function updateGrid() {
           const selectedCategories = Array.from(checkboxes)
@@ -283,7 +221,6 @@
           });
         }
 
-<<<<<<< Updated upstream
         function createSlideshow(slideshowContainer, images) {
           let slideIndex = 0;
 
@@ -296,11 +233,11 @@
             } else {
               slideIndex = index;
             }
-            //nasconde tutte le slides
+
             for (let i = 0; i < slides.length; i++) {
               slides[i].style.display = "none";
             }
-            //mostra la slide giusta
+
             slides[slideIndex].style.display = "block";
           }
 
@@ -317,35 +254,26 @@
           nextButton.addEventListener("click", () => plusSlides(1));
         }
 
-=======
->>>>>>> Stashed changes
         const gridMarkup = imageArray
           .map(
             (image) =>
-              `<div class="grid-item" id="image-${
-                image.id
-              }" data-categories="${image.category.join(" ")}">
-        <div class="slideshow-container" id="slideshow-${image.id}">
-          ${image.slideshowImages
-            .map(
-              (slideshowImage, index) =>
-                `<div class="mySlides">
-                    <img src="${slideshowImage}" style="width:100%">
-                  </div>`
-            )
-            .join("")}
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
-          <a class="close" onclick="closeSlideshow(${
-            image.id
-          })">&times;</a>
-        </div>
-        <img src="${image.src}" alt="Image" onclick="showSlideshow(${
-                image.id
-              })">
-        <h3>${image.title}</h3>
-        <p>${image.paragraph}</p>
-      </div>`
+              `<div class="grid-item" id="image-${image.id}" data-categories="${image.category.join(" ")}">
+                    <div class="slideshow-container" id="slideshow-${image.id}">
+                      ${image.slideshowImages
+                        .map(
+                          (slideshowImage, index) =>
+                            `<div class="mySlides">
+                                <img src="${slideshowImage}" style="width:100%">
+                              </div>`
+                        )
+                        .join("")}
+                      <a class="prev">&#10094;</a>
+                      <a class="next">&#10095;</a>
+                    </div>
+                    <img src="${image.src}" alt="Image" onclick="document.getElementById('slideshow-${image.id}').style.display='block';">
+                    <h3>${image.title}</h3>
+                    <p>${image.paragraph}</p>
+                </div>`
           )
           .join("");
 
@@ -356,13 +284,9 @@
         );
 
         imageArray.forEach((image) => {
-          const slideshowContainer = document.getElementById(
-            `slideshow-${image.id}`
-          );
+          const slideshowContainer = document.getElementById(`slideshow-${image.id}`);
           createSlideshow(slideshowContainer, image.slideshowImages);
         });
-        window.showSlideshow = showSlideshow; // Make showSlideshow global
-        window.closeSlideshow = closeSlideshow; // Rendi la funzione closeSlideshow globale
 
         updateGrid();
       });
