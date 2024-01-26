@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random GIFs</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #f0f0f0; /* Colore sfondo */
+    }
+
+    .random-gif {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Funzione per ottenere un numero casuale compreso tra min e max
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    // Funzione per caricare e posizionare casualmente le GIFs
+    function loadRandomGifs() {
+      const gifPaths = [
+        'assets/img (20).jpg',
+        'assets/img (18).jpg',
+        'assets/img (21).jpg',
+        'assets/img (17).jpg',
+        'assets/img (19).jpg',
+        // Aggiungi gli altri percorsi delle tue GIF qui
+      ];
+
+      const numGifs = gifPaths.length;
+      const gifContainer = document.body;
+
+      for (let i = 0; i < numGifs; i++) {
+        const gif = document.createElement('img');
+        const randomPathIndex = getRandomNumber(0, numGifs - 1);
+        gif.src = gifPaths[randomPathIndex];
+        gif.classList.add('random-gif');
+
+        const size = getRandomNumber(50, 150); // Dimensione casuale tra 50 e 150 pixel
+        gif.style.width = `${size}px`;
+        gif.style.height = `${size}px`;
+
+        // Posiziona casualmente le GIF evitando sovrapposizioni
+        let x, y;
+        do {
+          x = getRandomNumber(0, window.innerWidth - size);
+          y = getRandomNumber(0, window.innerHeight - size);
+          gif.style.left = `${x}px`;
+          gif.style.top = `${y}px`;
+        } while (checkOverlap(gif));
+
+        gifContainer.appendChild(gif);
+      }
+    }
+
+    // Funzione per verificare la sovrapposizione di elementi
+    function checkOverlap(element) {
+      const gifs = document.querySelectorAll('.random-gif');
+      for (const existingGif of gifs) {
+        if (element !== existingGif) {
+          const rect1 = element.getBoundingClientRect();
+          const rect2 = existingGif.getBoundingClientRect();
+          if (
+            rect1.left < rect2.right &&
+            rect1.right > rect2.left &&
+            rect1.top < rect2.bottom &&
+            rect1.bottom > rect2.top
+          ) {
+            return true; // Sovrapposizione rilevata
+          }
+        }
+      }
+      return false; // Nessuna sovrapposizione
+    }
+
+    // Carica le GIF al caricamento della pagina
+    window.onload = loadRandomGifs;
+  </script>
+</body>
+</html>
