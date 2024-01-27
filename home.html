@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random GIFs</title>
   <style>
+
+@font-face {
+  font-family: 'CirrusCumulus';
+  src: url('CirrusCumulus.ttf') format('truetype');
+  /* Aggiungi altri formati del font, se necessario */
+}
+
+
     body {
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       overflow: hidden;
       background-color: #f0f0f0; /* Colore sfondo */
@@ -15,29 +24,37 @@
       position: absolute;
     }
 
+    p{
+        padding:1px;
+     }
+
 
     a:link,
-a:visited {
-  color: red;
-  text-decoration: none;
-  text-shadow: white; /* Imposta il colore desiderato per i link non visitati e visitati */
-}
+    a:visited {
+    color: red;
+    text-decoration: none;
+    text-shadow: white; /* Imposta il colore desiderato per i link non visitati e visitati */
+    }
 
-a:hover,
-a:active {
-  color: red; /* Imposta il colore desiderato per i link quando il mouse è sopra di essi o quando sono attivi (cliccati) */
-  text-decoration: none; /* Rimuovi la sottolineatura quando il mouse è sopra il link o quando è attivo */
-}
+    a:hover,
+    a:active {
+    color: red; /* Imposta il colore desiderato per i link quando il mouse è sopra di essi o quando sono attivi (cliccati) */
+    text-decoration: none; /* Rimuovi la sottolineatura quando il mouse è sopra il link o quando è attivo */
+    }
 
     .archive {
       position: fixed;
       align-content: center;
-      top: 49%;
-      left: 45%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 1000; /* Assicura che i pulsanti siano sopra le GIF */
 
+      font-family: 'CirrusCumulus';
+      font-size: 50px;
       text-align: center;
       font-weight: bolder;
+      line-height: -2;
     }
 
     .storia {
@@ -51,19 +68,19 @@ a:active {
     }
 
     #button {
-      position: fixed; 
+      
       max-width: 120px;
     }
   </style>
 </head>
 <body>
     <div class="archive">
-        <a href='griglia funziona.html'>enter the archive</a>
+        <a href='griglia funziona.html'align-content:center>Enter the Archive</a>
     </div>
 
     <div class="storia">
         <a href="storia.html"><img src="assets/img (1).png" id="button">
-            <p>discover</p> the history</a>
+        </a>
     </div>
     
   <script>
