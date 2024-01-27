@@ -14,9 +14,58 @@
     .random-gif {
       position: absolute;
     }
+
+
+    a:link,
+a:visited {
+  color: red;
+  text-decoration: none;
+  text-shadow: white; /* Imposta il colore desiderato per i link non visitati e visitati */
+}
+
+a:hover,
+a:active {
+  color: red; /* Imposta il colore desiderato per i link quando il mouse è sopra di essi o quando sono attivi (cliccati) */
+  text-decoration: none; /* Rimuovi la sottolineatura quando il mouse è sopra il link o quando è attivo */
+}
+
+    .archive {
+      position: fixed;
+      align-content: center;
+      top: 49%;
+      left: 45%;
+      z-index: 1000; /* Assicura che i pulsanti siano sopra le GIF */
+
+      text-align: center;
+      font-weight: bolder;
+    }
+
+    .storia {
+      position: fixed;
+      top: 10px;
+      right: 30px;
+      z-index: 1000;
+
+      text-align: center;
+      font-weight: bolder;
+    }
+
+    #button {
+      position: fixed; 
+      max-width: 120px;
+    }
   </style>
 </head>
 <body>
+    <div class="archive">
+        <a href='griglia funziona.html'>enter the archive</a>
+    </div>
+
+    <div class="storia">
+        <a href="storia.html"><img src="assets/img (1).png" id="button">
+            <p>discover</p> the history</a>
+    </div>
+    
   <script>
     // Funzione per ottenere un numero casuale compreso tra min e max
     function getRandomNumber(min, max) {
@@ -49,32 +98,43 @@
 
         // Posiziona casualmente le GIF evitando sovrapposizioni
         let x, y;
+        let isOverlapping;
         do {
           x = getRandomNumber(0, window.innerWidth - size);
           y = getRandomNumber(0, window.innerHeight - size);
-          gif.style.left = `${x}px`;
-          gif.style.top = `${y}px`;
-        } while (checkOverlap(gif));
+
+          // Verifica se la posizione si sovrappone a un'altra GIF
+          isOverlapping = checkOverlap(gif, x, y);
+        } while (isOverlapping);
+
+        gif.style.left = `${x}px`;
+        gif.style.top = `${y}px`;
 
         gifContainer.appendChild(gif);
       }
     }
 
     // Funzione per verificare la sovrapposizione di elementi
-    function checkOverlap(element) {
+    function checkOverlap(element, x, y) {
       const gifs = document.querySelectorAll('.random-gif');
+      const size = parseInt(element.style.width); // Ottieni la dimensione dell'elemento corrente
+
       for (const existingGif of gifs) {
-        if (element !== existingGif) {
-          const rect1 = element.getBoundingClientRect();
-          const rect2 = existingGif.getBoundingClientRect();
-          if (
-            rect1.left < rect2.right &&
-            rect1.right > rect2.left &&
-            rect1.top < rect2.bottom &&
-            rect1.bottom > rect2.top
-          ) {
-            return true; // Sovrapposizione rilevata
-          }
+        const rect1 = {
+          left: x,
+          right: x + size,
+          top: y,
+          bottom: y + size,
+        };
+
+        const rect2 = existingGif.getBoundingClientRect();
+        if (
+          rect1.left < rect2.right &&
+          rect1.right > rect2.left &&
+          rect1.top < rect2.bottom &&
+          rect1.bottom > rect2.top
+        ) {
+          return true; // Sovrapposizione rilevata
         }
       }
       return false; // Nessuna sovrapposizione
@@ -85,3 +145,8 @@
   </script>
 </body>
 </html>
+
+
+
+
+
