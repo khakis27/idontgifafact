@@ -28,17 +28,21 @@
 
       .masonry-grid {
         float:left;
-        width:86%;
+        max-width:87%;
         column-count: 6;
+        columns: 6;
         column-gap: 10px;
-        height: 100vh;
-        overflow: scroll;  
+        
+        flex-direction: column;
+        overflow-y: scroll;
+        align-items: stretch;
       }
 
       .grid-item {
         break-inside: avoid;
         margin-bottom: 10px;
         position: relative;
+        width: 100%;
       }
 
       .grid-item img {
@@ -47,6 +51,9 @@
       }
 
       
+      .tutto {
+        height: 100vh;
+      }
       
       .col1 {
         margin: 0;
@@ -66,6 +73,7 @@
 
       .hidden {
         display: none;
+        width: 16%;
       }
 
       .grid-item h3 {
@@ -195,12 +203,41 @@
         animation: rainbow 2.5s linear;
         animation-iteration-count: infinite;
       }
+
+
+      .navigation {
+        margin: 0;
+        display: block;
+        z-index: 9999;
+      }
+
+      a:link,
+      a:visited {
+      color: red;
+      text-decoration: none;
+      text-shadow: white; /* Imposta il colore desiderato per i link non visitati e visitati */
+      }
+
+      a:hover,
+      a:active {
+      color: red; /* Imposta il colore desiderato per i link quando il mouse è sopra di essi o quando sono attivi (cliccati) */
+      text-decoration: none; /* Rimuovi la sottolineatura quando il mouse è sopra il link o quando è attivo */
+      }
+
     </style>
   </head>
 
 
   <body>
+    <div class="navigation">
+      <p><a href="home.html">Home</a></p>
+      <a href="storia.html">Learn More</a>
+    </div>
+
+    <div class="tutto">
+     
     <div class="col1">
+    
       <div class="checkbox">
         <p><label class="category-checkbox"
           ><input type="checkbox" id="Illustration" />Illustration</label
@@ -671,5 +708,7 @@
         updateGrid();
       });
     </script>
+
+</div>
   </body>
 </html>
