@@ -5,12 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Masonry Grid with Categories</title>
     <style>
+
+@font-face {
+  font-family: 'CirrusCumulus';
+  src: url('CirrusCumulus.ttf') format('truetype');
+  /* Aggiungi altri formati del font, se necessario */
+}
+@font-face {
+  font-family: 'AUTHENTICSans-Condensed-90';
+  src: url('AUTHENTICSans-Condensed-90.otf') format('truetype');
+  /* Aggiungi altri formati del font, se necessario */
+}
+
       body {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'AUTHENTICSans-Condensed-90', Arial, Helvetica, sans-serif;
       }
+      
+      p{
+        margin: 0%;
+        padding: 0%;
+      }
+
       .masonry-grid {
-        column-count: 8;
+        float:left;
+        width:86%;
+        column-count: 6;
         column-gap: 10px;
+        height: 100vh;
+        overflow: scroll;  
       }
 
       .grid-item {
@@ -24,25 +46,41 @@
         display: block;
       }
 
-      .category-checkbox {
-        margin-right: 10px;
+      
+      
+      .col1 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        float:left;
+        width:13%;
+        z-index: 1000;
       }
+
+      .checkbox {
+        margin-right: 10px;
+        margin: auto;
+      }
+
 
       .hidden {
         display: none;
       }
 
       .grid-item h3 {
+        font-family: 'CirrusCumulus', Arial, Helvetica, sans-serif;
+        font-weight: bolder;
         font-size: 18px;
         margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
-        color: #333;
+        color: red;
       }
 
       /* Stili per il paragrafo (p) */
       .grid-item p {
         font-size: 14px;
-        color: #666;
-        margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
+        color: black;
+        margin: 2px 0; /* Ridotto il margine tra il titolo e il paragrafo */
       }
 
       .grid-item h3:hover {
@@ -92,6 +130,7 @@
 
       .slideshow-container {
         position: fixed;
+        align-content: center;
         top: 0;
         left: 0;
         width: 100%;
@@ -105,6 +144,15 @@
         display: none;
       }
 
+      .mySlides img {
+        position: relative;
+        background-color:transparent;
+        margin: auto;
+        padding: 0;
+        width: 70%;
+        max-width: 1200px;
+      }
+
       .prev,
       .next {
         cursor: pointer;
@@ -115,7 +163,7 @@
         padding: 16px;
         color: white;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 40px;
         transition: 0.6s ease;
         border-radius: 0 3px 3px 0;
         user-select: none;
@@ -126,27 +174,79 @@
         border-radius: 3px 0 0 3px;
       }
 
+      .close {
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        user-select: none;
+        right: 10px;
+      }
+
       .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+      .next:hover,
+      .close:hover {
+        animation: rainbow 2.5s linear;
+        animation-iteration-count: infinite;
       }
     </style>
   </head>
+
+
   <body>
-    <div>
-      <label class="category-checkbox"
-        ><input type="checkbox" id="category1" /> Category 1</label
-      >
-      <label class="category-checkbox"
-        ><input type="checkbox" id="category2" /> Category 2</label
-      >
-      <label class="category-checkbox"
-        ><input type="checkbox" id="category3" /> Category 3</label
-      >
-      <label class="category-checkbox"
-        ><input type="checkbox" id="category4" /> Category 4</label
-      >
-      <!-- Aggiungi altri checkbox per le categorie qui -->
+    <div class="col1">
+      <div class="checkbox">
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Illustration" />Illustration</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Psychedelic" />Psychedelic</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="BnW" />Black and White</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Geometry" />Geometric</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Retro" />Retro</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Pop" />Pop Culture</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Surreal" />Surreal</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Text" />Animated Text</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Abstract" />Abstract</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Animals" />Animals</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Classic" />Classic Art</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Loop" />Video Loop</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Queer" />Queer Art</label
+        ></p>
+        <p><label class="category-checkbox"
+          ><input type="checkbox" id="Pixel" />Pixel Art</label
+        ></p>
+
+        <!-- Aggiungi altri checkbox per le categorie qui -->
+      </div>
     </div>
 
     <div class="masonry-grid" id="imageGrid"></div>
@@ -248,6 +348,246 @@
             "assets/img (22).jpg",
           ],
         },
+        {
+          id: 5,
+          src: "assets/img (1).jpg",
+          category: ["category1", "category2"],
+          title: "Title 1",
+          paragraph: "Lorem ipsum 1",
+          slideshowImages: [
+            "assets/img (11).jpg",
+            "assets/img (12).jpg",
+            "assets/img (13).jpg",
+          ],
+        },
+        {
+          id: 6,
+          src: "assets/img (2).jpg",
+          category: ["category2", "category3"],
+          title: "Title 2",
+          paragraph: "Lorem ipsum 2",
+          slideshowImages: [
+            "assets/img (14).jpg",
+            "assets/img (15).jpg",
+            "assets/img (16).jpg",
+          ],
+        },
+        {
+          id: 7,
+          src: "assets/img (3).jpg",
+          category: ["category3", "category4"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+          slideshowImages: [
+            "assets/img (17).jpg",
+            "assets/img (18).jpg",
+            "assets/img (19).jpg",
+          ],
+        },
+        {
+          id: 8,
+          src: "assets/img (4).jpg",
+          category: ["category4", "category1"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+          slideshowImages: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+          ],
+        },
+        {
+          id: 9,
+          src: "assets/img (1).jpg",
+          category: ["category1", "category2"],
+          title: "Title 1",
+          paragraph: "Lorem ipsum 1",
+          slideshowImages: [
+            "assets/img (11).jpg",
+            "assets/img (12).jpg",
+            "assets/img (13).jpg",
+          ],
+        },
+        {
+          id: 10,
+          src: "assets/img (2).jpg",
+          category: ["category2", "category3"],
+          title: "Title 2",
+          paragraph: "Lorem ipsum 2",
+          slideshowImages: [
+            "assets/img (14).jpg",
+            "assets/img (15).jpg",
+            "assets/img (16).jpg",
+          ],
+        },
+        {
+          id: 11,
+          src: "assets/img (3).jpg",
+          category: ["category3", "category4"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+          slideshowImages: [
+            "assets/img (17).jpg",
+            "assets/img (18).jpg",
+            "assets/img (19).jpg",
+          ],
+        },
+        {
+          id: 12,
+          src: "assets/img (4).jpg",
+          category: ["category4", "category1"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+          slideshowImages: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+          ],
+        },
+        {
+          id: 13,
+          src: "assets/img (1).jpg",
+          category: ["category1", "category2"],
+          title: "Title 1",
+          paragraph: "Lorem ipsum 1",
+          slideshowImages: [
+            "assets/img (11).jpg",
+            "assets/img (12).jpg",
+            "assets/img (13).jpg",
+          ],
+        },
+        {
+          id: 14,
+          src: "assets/img (2).jpg",
+          category: ["category2", "category3"],
+          title: "Title 2",
+          paragraph: "Lorem ipsum 2",
+          slideshowImages: [
+            "assets/img (14).jpg",
+            "assets/img (15).jpg",
+            "assets/img (16).jpg",
+          ],
+        },
+        {
+          id: 15,
+          src: "assets/img (3).jpg",
+          category: ["category3", "category4"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+          slideshowImages: [
+            "assets/img (17).jpg",
+            "assets/img (18).jpg",
+            "assets/img (19).jpg",
+          ],
+        },
+        {
+          id: 16,
+          src: "assets/img (4).jpg",
+          category: ["category4", "category1"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+          slideshowImages: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+          ],
+        },
+        {
+          id: 17,
+          src: "assets/img (1).jpg",
+          category: ["category1", "category2"],
+          title: "Title 1",
+          paragraph: "Lorem ipsum 1",
+          slideshowImages: [
+            "assets/img (11).jpg",
+            "assets/img (12).jpg",
+            "assets/img (13).jpg",
+          ],
+        },
+        {
+          id: 18,
+          src: "assets/img (2).jpg",
+          category: ["category2", "category3"],
+          title: "Title 2",
+          paragraph: "Lorem ipsum 2",
+          slideshowImages: [
+            "assets/img (14).jpg",
+            "assets/img (15).jpg",
+            "assets/img (16).jpg",
+          ],
+        },
+        {
+          id: 19,
+          src: "assets/img (3).jpg",
+          category: ["category3", "category4"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+          slideshowImages: [
+            "assets/img (17).jpg",
+            "assets/img (18).jpg",
+            "assets/img (19).jpg",
+          ],
+        },
+        {
+          id: 20,
+          src: "assets/img (4).jpg",
+          category: ["category4", "category1"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+          slideshowImages: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+          ],
+        },
+        {
+          id: 21,
+          src: "assets/img (2).jpg",
+          category: ["category2", "category3"],
+          title: "Title 2",
+          paragraph: "Lorem ipsum 2",
+          slideshowImages: [
+            "assets/img (14).jpg",
+            "assets/img (15).jpg",
+            "assets/img (16).jpg",
+          ],
+        },
+        {
+          id: 22,
+          src: "assets/img (1).jpg",
+          category: ["category1", "category2"],
+          title: "Title 1",
+          paragraph: "Lorem ipsum 1",
+          slideshowImages: [
+            "assets/img (11).jpg",
+            "assets/img (12).jpg",
+            "assets/img (13).jpg",
+          ],
+        },
+        {
+          id: 23,
+          src: "assets/img (3).jpg",
+          category: ["category3", "category4"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+          slideshowImages: [
+            "assets/img (17).jpg",
+            "assets/img (18).jpg",
+            "assets/img (19).jpg",
+          ],
+        },
+        {
+          id: 24,
+          src: "assets/img (4).jpg",
+          category: ["category4", "category1"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+          slideshowImages: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+          ],
+        },
       ];
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -298,11 +638,11 @@
                   </div>`
             )
             .join("")}
-          <a class="prev">&#10094;</a>
-          <a class="next">&#10095;</a>
+          <a class="prev">&#8592;</a>
+          <a class="next">&#8594;</a>
           <a class="close" onclick="closeSlideshow(${
             image.id
-          })">&times;</a>
+          })">&#10005;</a>
         </div>
         <img src="${image.src}" alt="Image" onclick="showSlideshow(${
                 image.id
