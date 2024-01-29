@@ -27,14 +27,16 @@
       }
 
       .masonry-grid {
+        margin-left: 13%;
         float:left;
         max-width:87%;
         column-count: 6;
         columns: 6;
         column-gap: 10px;
-        
+        height: auto;
         flex-direction: column;
         overflow-y: scroll;
+        overflow: hidden;
         align-items: stretch;
       }
 
@@ -51,14 +53,14 @@
       }
 
       
-      .tutto {
-        height: 100vh;
-      }
+      
       
       .col1 {
+        position: fixed;
         margin: 0;
+        overflow: none;
         display: flex;
-        align-items: center;
+       
         height: 100vh;
         float:left;
         width:13%;
@@ -68,6 +70,7 @@
       .checkbox {
         margin-right: 10px;
         margin: auto;
+        margin-left: 0;
       }
 
 
@@ -206,6 +209,7 @@
 
 
       .navigation {
+        position: fixed;
         margin: 0;
         display: block;
         z-index: 9999;
@@ -234,7 +238,7 @@
       <a href="storia.html">Learn More</a>
     </div>
 
-    <div class="tutto">
+    
      
     <div class="col1">
     
@@ -625,6 +629,78 @@
             "assets/img (22).jpg",
           ],
         },
+        {
+          id: 25,
+          src: "assets/img (3).jpg",
+          category: ["category3", "category4"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+          slideshowImages: [
+            "assets/img (17).jpg",
+            "assets/img (18).jpg",
+            "assets/img (19).jpg",
+          ],
+        },
+        {
+          id: 26,
+          src: "assets/img (4).jpg",
+          category: ["category4", "category1"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+          slideshowImages: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+          ],
+        },
+        {
+          id: 27,
+          src: "assets/img (1).jpg",
+          category: ["category1", "category2"],
+          title: "Title 1",
+          paragraph: "Lorem ipsum 1",
+          slideshowImages: [
+            "assets/img (11).jpg",
+            "assets/img (12).jpg",
+            "assets/img (13).jpg",
+          ],
+        },
+        {
+          id: 28,
+          src: "assets/img (2).jpg",
+          category: ["category2", "category3"],
+          title: "Title 2",
+          paragraph: "Lorem ipsum 2",
+          slideshowImages: [
+            "assets/img (14).jpg",
+            "assets/img (15).jpg",
+            "assets/img (16).jpg",
+          ],
+        },
+        {
+          id: 29,
+          src: "assets/img (3).jpg",
+          category: ["category3", "category4"],
+          title: "Title 3",
+          paragraph: "Lorem ipsum 3",
+          slideshowImages: [
+            "assets/img (17).jpg",
+            "assets/img (18).jpg",
+            "assets/img (19).jpg",
+          ],
+        },
+        {
+          id: 30,
+          src: "assets/img (4).jpg",
+          category: ["category4", "category1"],
+          title: "Title 4",
+          paragraph: "Lorem ipsum 4",
+          slideshowImages: [
+            "assets/img (20).jpg",
+            "assets/img (21).jpg",
+            "assets/img (22).jpg",
+          ],
+        },
       ];
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -709,6 +785,6 @@
       });
     </script>
 
-</div>
+
   </body>
 </html>
