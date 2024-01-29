@@ -89,6 +89,8 @@
 
       /* Stili per il paragrafo (p) */
       .grid-item p {
+        text-align: center;
+        align-self: center;
         font-size: 14px;
         color: black;
         margin: 2px 0; /* Ridotto il margine tra il titolo e il paragrafo */
@@ -162,6 +164,9 @@
         padding: 0;
         width: 70%;
         max-width: 1200px;
+        align-items: center;
+        max-height: 90vh;
+        min-height: 85vh;
       }
 
       .prev,
@@ -341,366 +346,608 @@
       }
 
       const imageArray = [
-        {
-          id: 1,
-          src: "assets/img (1).jpg",
-          category: ["category1", "category2"],
-          title: "Title 1",
-          paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
-        },
-        {
-          id: 2,
-          src: "assets/img (2).jpg",
-          category: ["category2", "category3"],
-          title: "Title 2",
-          paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
-        },
-        {
-          id: 3,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 4,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
-        {
-          id: 5,
-          src: "assets/img (1).jpg",
-          category: ["category1", "category2"],
-          title: "Title 1",
-          paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
-        },
-        {
-          id: 6,
-          src: "assets/img (2).jpg",
-          category: ["category2", "category3"],
-          title: "Title 2",
-          paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
-        },
-        {
-          id: 7,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 8,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
-        {
-          id: 9,
-          src: "assets/img (1).jpg",
-          category: ["category1", "category2"],
-          title: "Title 1",
-          paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
-        },
-        {
-          id: 10,
-          src: "assets/img (2).jpg",
-          category: ["category2", "category3"],
-          title: "Title 2",
-          paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
-        },
-        {
-          id: 11,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 12,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
-        {
-          id: 13,
-          src: "assets/img (1).jpg",
-          category: ["category1", "category2"],
-          title: "Title 1",
-          paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
-        },
-        {
-          id: 14,
-          src: "assets/img (2).jpg",
-          category: ["category2", "category3"],
-          title: "Title 2",
-          paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
-        },
-        {
-          id: 15,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 16,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
-        {
-          id: 17,
-          src: "assets/img (1).jpg",
-          category: ["category1", "category2"],
-          title: "Title 1",
-          paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
-        },
-        {
-          id: 18,
-          src: "assets/img (2).jpg",
-          category: ["category2", "category3"],
-          title: "Title 2",
-          paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
-        },
-        {
-          id: 19,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 20,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
-        {
-          id: 21,
-          src: "assets/img (2).jpg",
-          category: ["category2", "category3"],
-          title: "Title 2",
-          paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
-        },
-        {
-          id: 22,
-          src: "assets/img (1).jpg",
-          category: ["category1", "category2"],
-          title: "Title 1",
-          paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
-        },
-        {
-          id: 23,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 24,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
-        {
-          id: 25,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 26,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
-        {
-          id: 27,
-          src: "assets/img (1).jpg",
-          category: ["category1", "category2"],
-          title: "Title 1",
-          paragraph: "Lorem ipsum 1",
-          slideshowImages: [
-            "assets/img (11).jpg",
-            "assets/img (12).jpg",
-            "assets/img (13).jpg",
-          ],
-        },
-        {
-          id: 28,
-          src: "assets/img (2).jpg",
-          category: ["category2", "category3"],
-          title: "Title 2",
-          paragraph: "Lorem ipsum 2",
-          slideshowImages: [
-            "assets/img (14).jpg",
-            "assets/img (15).jpg",
-            "assets/img (16).jpg",
-          ],
-        },
-        {
-          id: 29,
-          src: "assets/img (3).jpg",
-          category: ["category3", "category4"],
-          title: "Title 3",
-          paragraph: "Lorem ipsum 3",
-          slideshowImages: [
-            "assets/img (17).jpg",
-            "assets/img (18).jpg",
-            "assets/img (19).jpg",
-          ],
-        },
-        {
-          id: 30,
-          src: "assets/img (4).jpg",
-          category: ["category4", "category1"],
-          title: "Title 4",
-          paragraph: "Lorem ipsum 4",
-          slideshowImages: [
-            "assets/img (20).jpg",
-            "assets/img (21).jpg",
-            "assets/img (22).jpg",
-          ],
-        },
+      {
+id: 1,
+src: "assets/adampizurny/adampizurny.gif",
+category: ["Psychedelic", "Surreal"],
+title: "Adam Pizurny",          
+slideshowImages: [
+"assets/adampizurny/adampizurny.gif",
+"assets/adampizurny/adampizurny1.gif",
+"assets/adampizurny/adampizurny2.gif",
+ 	"assets/adampizurny/adampizurny3.gif",
+            "assets/adampizurny/adampizurny4.gif",
+            "assets/adampizurny/adampizurny5.gif",
+            "assets/adampizurny/adampizurny.png"
+]
+},
+
+
+{
+id: 2,
+src: "assets/alcrego/alcrego1.gif",
+category: ["BnW", "Illustration"],
+title: "Alcrego",          
+slideshowImages: [
+"assets/alcrego/alcrego1.gif",
+"assets/alcrego/alcrego2.gif",
+ 	"assets/alcrego/alcrego3.gif",
+            "assets/alcrego/alcrego4.gif",
+            "assets/alcrego/alcrego5.gif",
+            "assets/alcrego/alcrego.png"
+]
+},
+
+{
+id: 3,
+src: "assets/archery/archery1.gif",
+category: ["Geometry", "Illustration"],
+title: "Archery",          
+slideshowImages: [
+"assets/archery/archery1.gif",
+"assets/archery/archery2.gif",
+"assets/archery/archery3.gif",
+ 	"assets/archery/archery4.gif",
+	"assets/archery/archery5.gif",
+	"assets/archery/archery.png"
+],
+},
+
+{
+id: 4,
+src: "assets/BillDomonkos/domonkos.gif",
+category: ["BnW", "Surreal"],
+title: "Bill Domonkos",          
+slideshowImages: [
+"assets/BillDomonkos/domonkos.gif",
+"assets/BillDomonkos/domonkos1.gif",
+"assets/BillDomonkos/domonkos2.gif",
+ 	"assets/BillDomonkos/domonkos3.gif",
+	"assets/BillDomonkos/domonkos4.gif",
+	"assets/BillDomonkos/domonkos5.gif",
+	"assets/BillDomonkos/domonkos.png",
+],
+},
+
+{
+id: 5,
+src: "assets/BitsAndBytes/BitsAndBytes1.gif",
+category: ["Retro", "Pixel"],
+title: "BitsAndBytes",          
+slideshowImages: [
+"assets/BitsAndBytes/BitsAndBytes1.gif",
+"assets/BitsAndBytes/BitsAndBytes2.gif",
+"assets/BitsAndBytes/BitsAndBytes3.gif",
+ 	"assets/BitsAndBytes/BitsAndBytes4.gif",
+	"assets/BitsAndBytes/BitsAndBytes5.gif",
+	"assets/BitsAndBytes/BitsAndBytes6.gif",
+	"assets/BitsAndBytes/BitsAndBytes7.gif",
+	"assets/BitsAndBytes/BitsAndBytes.png"
+],
+},
+
+{
+id: 6,
+src: "assets/carlagannis/carlagannis.gif",
+category: ["Pop","Queer"],
+title: "Carla Gannis",          
+slideshowImages: [
+"assets/carlagannis/carlagannis.gif",
+"assets/carlagannis/carlagannis1.gif",
+"assets/carlagannis/carlagannis2.gif",
+ 	"assets/carlagannis/carlagannis3.gif",
+	"assets/carlagannis/carlagannis4.gif",
+	"assets/carlagannis/carlagannis5.gif",
+"assets/carlagannis/carlagannis.png"
+],
+},
+
+{
+id: 7,
+src: "assets/carlburton/carlburton1.gif",
+category: ["Illustration", "Surreal"],
+title: "Carl Burton",          
+slideshowImages: [
+"assets/carlburton/carlburton1.gif",
+"assets/carlburton/carlburton2.gif",
+"assets/carlburton/carlburton3.gif",
+ 	"assets/carlburton/carlburton4.gif",
+	"assets/carlburton/carlburton5.gif",
+	"assets/carlburton/carlburton6.gif",
+	"assets/carlburton/carlburton.png"
+],
+},
+
+{
+id: 8,
+src: "assets/caseykauffman/caseykauffmann.gif",
+category: ["Pop"],
+title: "Casey Kauffman",          
+slideshowImages: [
+"assets/caseykauffman/caseykauffmann.gif",
+"assets/caseykauffman/caseykauffmann1.gif",
+"assets/caseykauffman/caseykauffmann2.gif",
+ 	"assets/caseykauffman/caseykauffmann3.gif",
+	"assets/caseykauffman/caseykauffmann.png"
+],
+},
+
+{
+id: 9,
+src: "assets/catfraizer/catfraizer1.gif",
+category: ["Pop", "Text", "Queer"],
+title: "Cat Fraizer",          
+slideshowImages: [
+"assets/catfraizer/catfraizer1.gif",
+"assets/catfraizer/catfraizer2.gif",
+"assets/catfraizer/catfraizer3.gif",
+ 	"assets/catfraizer/catfraizer4.gif",
+	"assets/catfraizer/catfraizer5.gif",
+	"assets/catfraizer/catfraizer6.gif",
+	"assets/catfraizer/catfraizer.png"
+	],
+},
+
+{
+id: 10,
+src: "assets/davidfirth/davidfirth.gif",
+category: ["Pop"],
+title: "David Firth",          
+slideshowImages: [
+"assets/davidfirth/davidfirth.gif",
+"assets/davidfirth/davidfirth1.gif",
+"assets/davidfirth/davidfirth2.gif",
+ 	"assets/davidfirth/davidfirth3.gif",
+	"assets/davidfirth/davidfirth4.gif",
+	"assets/davidfirth/davidfirth.png"
+	],
+},
+
+{
+id: 11,
+src: "assets/davidope/davidope.gif",
+category: ["Abstract", "BnW"],
+title: "Davidope",          
+slideshowImages: [
+"assets/davidope/davidope.gif",
+"assets/davidope/davidope1.gif",
+"assets/davidope/davidope2.gif",
+ 	"assets/davidope/davidope3.gif",
+	"assets/davidope/davidope.png"
+	],
+},
+
+{
+id: 12,
+src: "assets/drawadog/drawadog.gif",
+category: ["Animals", "Illustration"],
+title: "Draw a dog",          
+slideshowImages: [
+"assets/drawadog/drawadog.gif",
+"assets/drawadog/drawadog1.gif",
+"assets/drawadog/drawadog2.gif",
+ 	"assets/drawadog/drawadog3.gif",
+	"assets/drawadog/drawadog4.gif",
+	"assets/drawadog/drawadog.png"
+	],
+},
+
+{
+id: 13,
+src: "assets/EdwardHopper/EdwardHopper1.gif",
+category: ["Classic", "Loop"],
+title: "Edward Hopper",          
+slideshowImages: [
+"assets/EdwardHopper/EdwardHopper1.gif",
+"assets/EdwardHopper/EdwardHopper2.gif",
+"assets/EdwardHopper/EdwardHopper3.gif",
+ 	"assets/EdwardHopper/EdwardHopper4.gif",
+	"assets/EdwardHopper/EdwardHopper5.gif",
+	"assets/EdwardHopper/EdwardHopper.png"
+	],
+},
+
+{
+id: 14,
+src: "assets/elbi/elbi.gif",
+category: ["Retro", "Loop"],
+title: "Elbi",          
+slideshowImages: [
+"assets/elbi/elbi.gif",
+"assets/elbi/elbi1.gif",
+"assets/elbi/elbi2.gif",
+ 	"assets/elbi/elbi3.gif",
+	"assets/elbi/elbi4.gif",
+	"assets/elbi/elbi5.gif",
+	"assets/elbi/elbi6.gif",
+	"assets/elbi/elbi.png",
+	],
+},
+
+{
+id: 15,
+src: "assets/elliepritts/elliepritts.gif",
+category: ["Pop", "Retro"],
+title: "Ellie Pritts",          
+slideshowImages: [
+"assets/elliepritts/elliepritts.gif",
+"assets/elliepritts/elliepritts1.gif",
+"assets/elliepritts/elliepritts2.gif",
+ 	"assets/elliepritts/elliepritts3.gif",
+	"assets/elliepritts/elliepritts4.gif",
+	"assets/elliepritts/elliepritts5.gif",
+	"assets/elliepritts/elliepritts.png",
+	],
+},
+
+{
+id: 16,
+src: "assets/erdalinci/erdalinci.gif",
+category: ["Loop"],
+title: "Erdal Inci",          
+slideshowImages: [
+"assets/erdalinci/erdalinci.gif",
+"assets/erdalinci/erdalinci1.gif",
+"assets/erdalinci/erdalinci2.gif",
+ 	"assets/erdalinci/erdalinci3.gif",
+	"assets/erdalinci/erdalinci.png",
+	],
+},
+
+{
+id: 17,
+src: "assets/fantasticplanet/fantasticplanet.gif",
+category: ["Queer", "Surreal"],
+title: "Fantastic Planet",          
+slideshowImages: [
+"assets/fantasticplanet/fantasticplanet.gif",
+"assets/fantasticplanet/fantasticplanet1.gif",
+"assets/fantasticplanet/fantasticplanet2.gif",
+ 	"assets/fantasticplanet/fantasticplanet3.gif",
+	"assets/fantasticplanet/fantasticplanet4.gif",
+"assets/fantasticplanet/fantasticplanet.png"
+	],
+},
+
+{
+id: 18,
+src: "assets/francoisegamma/francoisegamma.gif",
+category: ["Illustration", "Geometry", "BnW"],
+title: "Francoise Gamma",          
+slideshowImages: [
+"assets/francoisegamma/francoisegamma.gif",
+"assets/francoisegamma/francoisegamma1.gif",
+"assets/francoisegamma/francoisegamma2.gif",
+ 	"assets/francoisegamma/francoisegamma3.gif",
+	"assets/francoisegamma/francoisegamma4.gif",
+"assets/francoisegamma/francoisegamma5.gif",
+"assets/francoisegamma/francoisegamma.png"
+	],
+},
+
+{
+id: 19,
+src: "assets/haydiroket/haydiroket.gif",
+category: ["Pixel", "Pop", "Retro"],
+title: "Haydiroket",          
+slideshowImages: [
+"assets/haydiroket/haydiroket.gif",
+"assets/haydiroket/haydiroket1.gif",
+"assets/haydiroket/haydiroket2.gif",
+ 	"assets/haydiroket/haydiroket3.gif",
+	"assets/haydiroket/haydiroket4.gif",
+"assets/haydiroket/haydiroket5.gif",
+"assets/haydiroket/haydiroket6.gif",
+"assets/haydiroket/haydiroket7.gif",
+"assets/haydiroket/haydiroket8.gif",
+"assets/haydiroket/haydiroket.png",
+	],
+},
+
+{
+id: 20,
+src: "assets/lamuertedeunperrito/perrito.gif",
+category: ["Surreal"],
+title: "La muerte de un perrito",          
+slideshowImages: [
+"assets/lamuertedeunperrito/perrito.gif",
+"assets/lamuertedeunperrito/perrito1.gif",
+"assets/lamuertedeunperrito/perrito2.gif",
+ 	"assets/lamuertedeunperrito/perrito3.gif",
+	"assets/lamuertedeunperrito/perrito4.gif",
+"assets/lamuertedeunperrito/perrito5.gif",
+"assets/lamuertedeunperrito/perrito.png",
+	],
+},
+
+{
+id: 21,
+src: "assets/lornamills_animals/lornamills.gif",
+category: ["Animal", "Pixel", "Pop"],
+title: "Lorna Mills",          
+slideshowImages: [
+"assets/lornamills_animals/lornamills.gif",
+"assets/lornamills_animals/lornamills1.gif",
+"assets/lornamills_animals/lornamills2.gif",
+ 	"assets/lornamills_animals/lornamills3.gif",
+	"assets/lornamills_animals/lornamills4.gif",
+	],
+},
+
+{
+id: 22,
+src: "assets/LucasLejeune/lucaslejeune.gif",
+category: ["Abstract", "Geometry", "BnW"],
+title: "Lucas Lejeune",          
+slideshowImages: [
+"assets/LucasLejeune/lucaslejeune.gif",
+"assets/LucasLejeune/lucaslejeune1.gif",
+"assets/LucasLejeune/lucaslejeune2.gif",
+ 	"assets/LucasLejeune/lucaslejeune3.gif",
+	"assets/LucasLejeune/lucaslejeune4.gif",
+"assets/LucasLejeune/lucaslejeune5.gif",
+"assets/LucasLejeune/lucaslejeune6.gif",
+"assets/LucasLejeune/lucaslejeune7.gif",
+"assets/LucasLejeune/lucaslejeune.png"
+	],
+},
+
+{
+id: 23,
+src: "assets/MatthewDeVito/matthedevito.gif",
+category: ["Retro", "Loop"],
+title: "Matthew De Vito",          
+slideshowImages: [
+"assets/MatthewDeVito/matthedevito.gif",
+"assets/MatthewDeVito/matthedevito1.gif",
+"assets/MatthewDeVito/matthedevito2.gif",
+ 	"assets/MatthewDeVito/matthedevito3.gif",
+	"assets/MatthewDeVito/matthedevito4.gif",
+"assets/MatthewDeVito/matthedevito.png",
+	],
+},
+
+{
+id: 24,
+src: "assets/michaelreynaud/micaelreynaud1.gif",
+category: ["Loop"],
+title: "Michael Reynaud",          
+slideshowImages: [
+"assets/michaelreynaud/michaelreynaud1.gif",
+"assets/michaelreynaud/michaelreynaud2.gif",
+ 	"assets/michaelreynaud/michaelreynaud3.gif",
+	"assets/michaelreynaud/michaelreynaud4.gif",
+"assets/michaelreynaud/michaelreynaud5.gif",
+"assets/michaelreynaud/michaelreynaud6.gif",
+"assets/michaelreynaud/michaelreynaud7.gif",
+"assets/michaelreynaud/michaelreynaud.png"
+	],
+},
+
+{
+id: 25,
+src: "assets/MichaelPerez/michaelperez.gif",
+category: ["Abstract", "Surreal"],
+title: "Michael Perez",          
+slideshowImages: [
+"assets/MichaelPerez/michaelperez.gif",
+"assets/MichaelPerez/michaelperez1.gif",
+"assets/MichaelPerez/michaelperez2.gif",
+ 	"assets/MichaelPerez/michaelperez3.gif",
+	"assets/MichaelPerez/michaelperez4.gif",
+"assets/MichaelPerez/michaelperez.png",
+	],
+},
+
+{
+id: 26,
+src: "assets/mostwrongking/mostwrongking.gif",
+category: ["Abstract", "Psychedelic"],
+title: "Most Wrong King",          
+slideshowImages: [
+"assets/mostwrongking/mostwrongking.gif",
+"assets/mostwrongking/mostwrongking1.gif",
+"assets/mostwrongking/mostwrongking2.gif",
+ 	"assets/mostwrongking/mostwrongking.png",
+	],
+},
+
+{
+id: 27, 
+src: "assets/nicolasmenard/nicolasmenard1.gif",
+category: ["BnW"],
+title: "Nicolas Menard",          
+slideshowImages: [
+"assets/nicolasmenard/nicolasmenard1.gif",
+"assets/nicolasmenard/nicolasmenard2.gif",
+"assets/nicolasmenard/nicolasmenard.png",
+ 	],
+},
+{
+id: 28,
+src: "assets/nicoletamures/nicoletamures.gif",
+category: ["Pop", "Surreal"],
+title: "Nicoleta Mures",          
+slideshowImages: [
+"assets/nicoletamures/nicoletamures.gif",
+"assets/nicoletamures/nicoletamures1.gif",
+"assets/nicoletamures/nicoletamures.png",
+ 	],
+},
+
+{
+id: 29,
+src: "assets/polygon1993/polygon1993.gif",
+category: ["Retro"],
+title: "polygon1993",          
+slideshowImages: [
+"assets/polygon1993/polygon1993.gif",
+"assets/polygon1993/polygon19931.gif",
+"assets/polygon1993/polygon19932.gif",
+"assets/polygon1993/polygon19933.gif",
+"assets/polygon1993/polygon19934.gif",
+"assets/polygon1993/polygon19935.gif",
+"assets/polygon1993/polygon1993.png",
+ 	],
+},
+
+{
+id: 30,
+src: "assets/RyanEnnHughesCaribana/RyanEnnHughesCaribana1.gif",
+category: ["Loop", "Queer"],
+title: "Ryan Enn Hughes",          
+slideshowImages: [
+"assets/RyanEnnHughesCaribana/RyanEnnHughesCaribana1.gif",
+"assets/RyanEnnHughesCaribana/RyanEnnHughesCaribana2.gif",
+ 	],
+},
+
+{
+id: 31,
+src: "assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e1.gif",
+category: ["Loop"],
+title: "Ryan Enn Hughes",          
+slideshowImages: [
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e1.gif",
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e2.gif",
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e3.gif",
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e4.gif",
+ 	],
+},
+
+{
+id: 32,
+src: "assets/RyanEnnHughesFilosofia/RyanEnnHughesFilosofia1.gif",
+category: ["Loop"],
+title: "Ryan Enn Hughes",          
+slideshowImages: [
+"assets/RyanEnnHughesFilosofia/RyanEnnHughesFilosofia1.gif",
+"assets/RyanEnnHughesFilosofia/RyanEnnHughesFilosofia2.gif",
+ 	],
+},
+
+{
+id: 33,
+src: "assets/RyanEnnHughesPop/RyanEnnHughesPop1.gif",
+category: ["Loop", "Pop"],
+title: "Ryan Enn Hughes",          
+slideshowImages: [
+"assets/RyanEnnHughesPop/RyanEnnHughesPop1.gif",
+"assets/RyanEnnHughesPop/RyanEnnHughesPop2.gif",
+"assets/RyanEnnHughesPop/RyanEnnHughesPop3.gif",
+ 	],
+},
+
+{
+id: 34,
+src: "assets/RyanEnnHughesPortrait/RyanEnnHughesPortrait1.gif",
+category: ["Loop"],
+title: "Ryan Enn Hughes",          
+slideshowImages: [
+"assets/RyanEnnHughesPortrait/RyanEnnHughesPortrait1.gif",
+"assets/RyanEnnHughesPortrait/RyanEnnHughesPortrait2.gif",
+"assets/RyanEnnHughesPortrait/RyanEnnHughes.png",
+ 	],
+},
+
+{
+id: 35,
+src: "assets/scorpiondagger/scorpiondagger.gif",
+category: ["Classic", "Pop"],
+title: "Scorpion Dagger",          
+slideshowImages: [
+"assets/scorpiondagger/scorpiondagger.gif",
+"assets/scorpiondagger/scorpiondagger2.gif",
+"assets/scorpiondagger/scorpiondagger3.gif",
+"assets/scorpiondagger/scorpiondagger4.gif",
+"assets/scorpiondagger/scorpiondagger.png",
+ 	],
+},
+
+{
+id: 36,
+src: "assets/unomoralez/unomoralez01.gif",
+category: ["Pixel", "BnW", "Illustration", "Surreal"],
+title: "Uno Moralez",          
+slideshowImages: [
+"assets/unomoralez/unomoralez01.gif",
+"assets/unomoralez/unomoralez02.gif",
+"assets/unomoralez/unomoralez03.gif",
+"assets/unomoralez/unomoralez04.gif",
+"assets/unomoralez/unomoralez05.gif",
+"assets/unomoralez/unomoralez06.gif",
+"assets/unomoralez/unomoralez07.gif",
+"assets/unomoralez/unomoralez08.gif",
+"assets/unomoralez/unomoralez09.gif",
+"assets/unomoralez/unomoralez10.gif",
+"assets/unomoralez/unomoralez11.gif",
+"assets/unomoralez/unomoralez12.gif",
+"assets/unomoralez/unomoralez13.gif",
+"assets/unomoralez/unomoralez14.gif",
+"assets/unomoralez/unomoralez15.gif",
+"assets/unomoralez/unomoralez16.gif",
+"assets/unomoralez/unomoralez17.gif",
+"assets/unomoralez/unomoralez18.gif",
+"assets/unomoralez/unomoralez19.gif",
+"assets/unomoralez/unomoralez.png",
+ 	],
+},
+
+{
+id: 37,
+src: "assets/v5mt/v5mt.gif",
+category: ["BnW", "Pixel", "Surreal",],
+title: "v5mt",          
+slideshowImages: [
+"assets/v5mt/v5mt.gif",
+"assets/v5mt/v5mt1.gif",
+"assets/v5mt/v5mt2.gif",
+"assets/v5mt/v5mt3.gif",
+"assets/v5mt/v5mt.png",
+ 	],
+},
+
+{
+id: 38,
+src: "assets/yanghuachun/yanghuachun1.gif",
+category: ["Illustration", "Loop", "Classic"],
+title: "Yanghua Chun",          
+slideshowImages: [
+"assets/yanghuachun/yanghuachun1.gif",
+"assets/yanghuachun/yanghuachun2.gif",
+"assets/yanghuachun/yanghuachun3.gif",
+"assets/yanghuachun/yanghuachun4.gif",
+"assets/yanghuachun/yanghuachun.png",
+ 	],
+},
+
+{
+id: 39,
+src: "assets/zachdougherty/zachdougherty.gif",
+category: ["Loop", "Surreal"],
+title: "Zach Dougherty",          
+slideshowImages: [
+"assets/zachdougherty/zachdougherty.gif",
+"assets/zachdougherty/zachdougherty1.gif",
+"assets/zachdougherty/zachdougherty2.gif",
+"assets/zachdougherty/zachdougherty3.png",
+ 	],
+},
+
+{
+id: 40,
+src: "assets/lornamills_random/lornamills6.gif",
+category: ["Pop", "Pixel"],
+title: "Lorna Mills",          
+slideshowImages: [
+"assets/lornamills_random/lornamills6.gif",
+"assets/lornamills_random/lornamills7.gif",
+"assets/lornamills_random/lornamills8.gif",
+ 	"assets/lornamills_random/lornamills9.gif",
+"assets/lornamills_random/lornamills.png",
+	],
+},
+
       ];
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -761,7 +1008,7 @@
                 image.id
               })">
         <h3>${image.title}</h3>
-        <p>${image.paragraph}</p>
+       
       </div>`
           )
           .join("");
