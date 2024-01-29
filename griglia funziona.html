@@ -87,6 +87,8 @@
         font-size: 18px;
         margin: 3px 0; /* Ridotto il margine tra il titolo e il paragrafo */
         color: red;
+        text-align: center;
+        align-self: center;
       }
 
       /* Stili per il paragrafo (p) */
@@ -156,23 +158,26 @@
       }
 
       .mySlides {
-        display: none;
-      }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        }
 
       .mySlides img {
-        position: relative;
-        background-color:transparent;
-        margin: auto;
-        padding: 0;
-        width: 70%;
-        max-width: 1200px;
+        position: absolute;
+        width:auto;
+        height: auto;
         align-items: center;
-        max-height: 90vh;
-        min-height: 85vh;
-        align-content: center;
+        max-height: 90%;
+        max-width: 100%;
         top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: contain;
       }
 
       .prev,
@@ -989,35 +994,36 @@ slideshowImages: [
           });
         }
 
-        const gridMarkup = imageArray
-          .map(
-            (image) =>
-              `<div class="grid-item" id="image-${
-                image.id
-              }" data-categories="${image.category.join(" ")}">
-        <div class="slideshow-container" id="slideshow-${image.id}">
-          ${image.slideshowImages
-            .map(
-              (slideshowImage, index) =>
-                `<div class="mySlides">
-                    <img src="${slideshowImage}" style="width:100%">
-                  </div>`
-            )
-            .join("")}
-          <a class="prev">&#8592;</a>
-          <a class="next">&#8594;</a>
-          <a class="close" onclick="closeSlideshow(${
-            image.id
-          })">&#10005;</a>
-        </div>
-        <img src="${image.src}" alt="Image" onclick="showSlideshow(${
-                image.id
-              })">
-        <h3>${image.title}</h3>
-       
-      </div>`
-          )
-          .join("");
+        const shuffledImageArray = imageArray.slice().sort(() => Math.random() - 0.5);
+
+const gridMarkup = shuffledImageArray
+.map(
+(image) =>
+`<div class="grid-item" id="image-${
+image.id
+}" data-categories="${image.category.join(" ")}">
+<div class="slideshow-container" id="slideshow-${image.id}">
+  ${image.slideshowImages
+    .map(
+      (slideshowImage, index) =>
+        `<div class="mySlides">
+            <img src="${slideshowImage}" style="width:100%">
+          </div>`
+    )
+    .join("")}
+  <a class="prev">&#8592;</a>
+  <a class="next">&#8594;</a>
+  <a class="close" onclick="closeSlideshow(${
+    image.id
+  })">&#10005;</a>
+</div>
+<img src="${image.src}" alt="Image" onclick="showSlideshow(${
+  image.id
+})">
+<h3>${image.title}</h3>
+</div>`
+)
+.join("");
 
         imageGrid.innerHTML = gridMarkup;
 
