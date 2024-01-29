@@ -22,6 +22,7 @@
       margin: 0;
       overflow: hidden;
       background-color: #f0f0f0; /* Colore sfondo */
+      font-size: 18px;
     }
 
     .random-gif {
@@ -55,7 +56,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1000; /* Assicura che i pulsanti siano sopra le GIF */
-
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.99);
       font-family: 'CirrusCumulus';
       font-size: 50px;
       text-align: center;
@@ -70,7 +71,7 @@
       z-index: 1000;
 
       text-align: center;
-      font-weight: bolder;
+      
     }
 
     #button {
@@ -81,11 +82,11 @@
 </head>
 <body>
     <div class="archive">
-        <a href='griglia funziona.html'align-content:center>Enter the Archive</a>
+        <a href='griglia funziona.html'align-content:center>I don't Gif a Fact</a>
     </div>
 
     <div class="storia">
-        <a href="storia.html"><img src="assets/img (1).png" id="button">
+        <a href="storia.html">Learn More
         </a>
     </div>
     
@@ -98,26 +99,233 @@
     // Funzione per caricare e posizionare casualmente le GIFs
     function loadRandomGifs() {
       const gifPaths = [
-        'assets/img (20).jpg',
-        'assets/img (18).jpg',
-        'assets/img (21).jpg',
-        'assets/img (17).jpg',
-        'assets/img (19).jpg',
+      "assets/adampizurny/adampizurny.gif",
+      "assets/alcrego/alcrego1.gif",
+      "assets/archery/archery1.gif",
+      "assets/BillDomonkos/domonkos.gif",
+      "assets/BitsAndBytes/BitsAndBytes1.gif",
+      "assets/carlagannis/carlagannis.gif",
+      "assets/carlburton/carlburton1.gif",
+      "assets/caseykauffman/caseykauffmann.gif",
+      "assets/catfraizer/catfraizer1.gif",
+      "assets/davidfirth/davidfirth.gif",
+      "assets/davidope/davidope.gif",
+      "assets/drawadog/drawadog.gif",
+      "assets/EdwardHopper/EdwardHopper1.gif",
+      "assets/elbi/elbi.gif",
+      "assets/elliepritts/elliepritts.gif",
+      "assets/erdalinci/erdalinci.gif",
+      "assets/fantasticplanet/fantasticplanet.gif",
+      "assets/francoisegamma/francoisegamma.gif",
+      "assets/haydiroket/haydiroket.gif",
+      "assets/lamuertedeunperrito/perrito.gif",
+      "assets/lornamills_animals/lornamills.gif",
+      "assets/LucasLejeune/lucaslejeune.gif",
+      "assets/MatthewDeVito/matthedevito.gif",
+      "assets/michaelreynaud/michaelreynaud1.gif",
+      "assets/MichaelPerez/michaelperez.gif",
+      "assets/mostwrongking/mostwrongking.gif",
+      "assets/nicolasmenard/nicolasmenard1.gif",
+      "assets/nicoletamures/nicoletamures.gif",
+"assets/nicoletamures/nicoletamures1.gif",
+"assets/polygon1993/polygon1993.gif",
+"assets/polygon1993/polygon19931.gif",
+"assets/polygon1993/polygon19932.gif",
+"assets/polygon1993/polygon19933.gif",
+"assets/polygon1993/polygon19934.gif",
+"assets/polygon1993/polygon19935.gif",
+"assets/RyanEnnHughesCaribana/RyanEnnHughesCaribana1.gif",
+"assets/RyanEnnHughesCaribana/RyanEnnHughesCaribana2.gif",
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e1.gif",
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e2.gif",
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e3.gif",
+"assets/RyanEnnHughesDan$e/RyanEnnHughesDan$e4.gif",
+"assets/RyanEnnHughesFilosofia/RyanEnnHughesFilosofia1.gif",
+"assets/RyanEnnHughesFilosofia/RyanEnnHughesFilosofia2.gif",
+"assets/RyanEnnHughesPop/RyanEnnHughesPop1.gif",
+"assets/RyanEnnHughesPop/RyanEnnHughesPop2.gif",
+"assets/RyanEnnHughesPop/RyanEnnHughesPop3.gif",
+"assets/RyanEnnHughesPortrait/RyanEnnHughesPortrait1.gif",
+"assets/RyanEnnHughesPortrait/RyanEnnHughesPortrait2.gif",
+"assets/scorpiondagger/scorpiondagger.gif",
+"assets/scorpiondagger/scorpiondagger2.gif",
+"assets/scorpiondagger/scorpiondagger3.gif",
+"assets/scorpiondagger/scorpiondagger4.gif",
+"assets/unomoralez/unomoralez01.gif",
+"assets/unomoralez/unomoralez02.gif",
+"assets/unomoralez/unomoralez03.gif",
+"assets/unomoralez/unomoralez04.gif",
+"assets/unomoralez/unomoralez05.gif",
+"assets/unomoralez/unomoralez06.gif",
+"assets/unomoralez/unomoralez07.gif",
+"assets/unomoralez/unomoralez08.gif",
+"assets/unomoralez/unomoralez09.gif",
+"assets/unomoralez/unomoralez10.gif",
+"assets/unomoralez/unomoralez11.gif",
+"assets/unomoralez/unomoralez12.gif",
+"assets/unomoralez/unomoralez13.gif",
+"assets/unomoralez/unomoralez14.gif",
+"assets/unomoralez/unomoralez15.gif",
+"assets/unomoralez/unomoralez16.gif",
+"assets/unomoralez/unomoralez17.gif",
+"assets/unomoralez/unomoralez18.gif",
+"assets/unomoralez/unomoralez19.gif",
+"assets/v5mt/v5mt.gif",
+"assets/v5mt/v5mt1.gif",
+"assets/v5mt/v5mt2.gif",
+"assets/v5mt/v5mt3.gif",
+"assets/yanghuachun/yanghuachun1.gif",
+"assets/yanghuachun/yanghuachun2.gif",
+"assets/yanghuachun/yanghuachun3.gif",
+"assets/yanghuachun/yanghuachun4.gif",
+"assets/zachdougherty/zachdougherty.gif",
+"assets/zachdougherty/zachdougherty1.gif",
+"assets/zachdougherty/zachdougherty2.gif",
+"assets/lornamills_random/lornamills6.gif",
+"assets/lornamills_random/lornamills7.gif",
+"assets/lornamills_random/lornamills8.gif",
+"assets/lornamills_random/lornamills9.gif",
+"assets/nicolasmenard/nicolasmenard2.gif",
+"assets/mostwrongking/mostwrongking1.gif",
+"assets/mostwrongking/mostwrongking2.gif",
+"assets/MichaelPerez/michaelperez1.gif",
+"assets/MichaelPerez/michaelperez2.gif",
+ 	"assets/MichaelPerez/michaelperez3.gif",
+	"assets/MichaelPerez/michaelperez4.gif",
+"assets/michaelreynaud/michaelreynaud2.gif",
+ 	"assets/michaelreynaud/michaelreynaud3.gif",
+	"assets/michaelreynaud/michaelreynaud4.gif",
+"assets/michaelreynaud/michaelreynaud5.gif",
+"assets/michaelreynaud/michaelreynaud6.gif",
+"assets/michaelreynaud/michaelreynaud7.gif",
+"assets/MatthewDeVito/matthedevito1.gif",
+"assets/MatthewDeVito/matthedevito2.gif",
+ 	"assets/MatthewDeVito/matthedevito3.gif",
+	"assets/MatthewDeVito/matthedevito4.gif",
+"assets/LucasLejeune/lucaslejeune1.gif",
+"assets/LucasLejeune/lucaslejeune2.gif",
+ 	"assets/LucasLejeune/lucaslejeune3.gif",
+	"assets/LucasLejeune/lucaslejeune4.gif",
+"assets/LucasLejeune/lucaslejeune5.gif",
+"assets/LucasLejeune/lucaslejeune6.gif",
+"assets/LucasLejeune/lucaslejeune7.gif",
+"assets/lornamills_animals/lornamills1.gif",
+"assets/lornamills_animals/lornamills2.gif",
+ 	"assets/lornamills_animals/lornamills3.gif",
+	"assets/lornamills_animals/lornamills4.gif",
+    "assets/lamuertedeunperrito/perrito1.gif",
+"assets/lamuertedeunperrito/perrito2.gif",
+ 	"assets/lamuertedeunperrito/perrito3.gif",
+	"assets/lamuertedeunperrito/perrito4.gif",
+"assets/lamuertedeunperrito/perrito5.gif",
+"assets/haydiroket/haydiroket1.gif",
+"assets/haydiroket/haydiroket2.gif",
+ 	"assets/haydiroket/haydiroket3.gif",
+	"assets/haydiroket/haydiroket4.gif",
+"assets/haydiroket/haydiroket5.gif",
+"assets/haydiroket/haydiroket6.gif",
+"assets/haydiroket/haydiroket7.gif",
+"assets/haydiroket/haydiroket8.gif",
+"assets/francoisegamma/francoisegamma1.gif",
+"assets/francoisegamma/francoisegamma2.gif",
+ 	"assets/francoisegamma/francoisegamma3.gif",
+	"assets/francoisegamma/francoisegamma4.gif",
+"assets/francoisegamma/francoisegamma5.gif",
+"assets/fantasticplanet/fantasticplanet1.gif",
+"assets/fantasticplanet/fantasticplanet2.gif",
+ 	"assets/fantasticplanet/fantasticplanet3.gif",
+	"assets/fantasticplanet/fantasticplanet4.gif",
+    "assets/erdalinci/erdalinci1.gif",
+"assets/erdalinci/erdalinci2.gif",
+ 	"assets/erdalinci/erdalinci3.gif",
+     "assets/elliepritts/elliepritts1.gif",
+"assets/elliepritts/elliepritts2.gif",
+ 	"assets/elliepritts/elliepritts3.gif",
+	"assets/elliepritts/elliepritts4.gif",
+	"assets/elliepritts/elliepritts5.gif",
+    "assets/elbi/elbi1.gif",
+"assets/elbi/elbi2.gif",
+ 	"assets/elbi/elbi3.gif",
+	"assets/elbi/elbi4.gif",
+	"assets/elbi/elbi5.gif",
+	"assets/elbi/elbi6.gif",
+    "assets/EdwardHopper/EdwardHopper2.gif",
+"assets/EdwardHopper/EdwardHopper3.gif",
+ 	"assets/EdwardHopper/EdwardHopper4.gif",
+	"assets/EdwardHopper/EdwardHopper5.gif",
+    "assets/drawadog/drawadog1.gif",
+"assets/drawadog/drawadog2.gif",
+ 	"assets/drawadog/drawadog3.gif",
+	"assets/drawadog/drawadog4.gif",
+    "assets/davidope/davidope1.gif",
+"assets/davidope/davidope2.gif",
+ 	"assets/davidope/davidope3.gif",
+     "assets/davidfirth/davidfirth1.gif",
+"assets/davidfirth/davidfirth2.gif",
+ 	"assets/davidfirth/davidfirth3.gif",
+	"assets/davidfirth/davidfirth4.gif",
+    "assets/catfraizer/catfraizer2.gif",
+"assets/catfraizer/catfraizer3.gif",
+ 	"assets/catfraizer/catfraizer4.gif",
+	"assets/catfraizer/catfraizer5.gif",
+	"assets/catfraizer/catfraizer6.gif",
+    "assets/caseykauffman/caseykauffmann1.gif",
+"assets/caseykauffman/caseykauffmann2.gif",
+ 	"assets/caseykauffman/caseykauffmann3.gif",
+     "assets/carlburton/carlburton2.gif",
+"assets/carlburton/carlburton3.gif",
+ 	"assets/carlburton/carlburton4.gif",
+	"assets/carlburton/carlburton5.gif",
+	"assets/carlburton/carlburton6.gif",
+    "assets/carlagannis/carlagannis1.gif",
+"assets/carlagannis/carlagannis2.gif",
+ 	"assets/carlagannis/carlagannis3.gif",
+	"assets/carlagannis/carlagannis4.gif",
+	"assets/carlagannis/carlagannis5.gif",
+    "assets/BitsAndBytes/BitsAndBytes2.gif",
+"assets/BitsAndBytes/BitsAndBytes3.gif",
+ 	"assets/BitsAndBytes/BitsAndBytes4.gif",
+	"assets/BitsAndBytes/BitsAndBytes5.gif",
+	"assets/BitsAndBytes/BitsAndBytes6.gif",
+	"assets/BitsAndBytes/BitsAndBytes7.gif",
+    "assets/BillDomonkos/domonkos1.gif",
+"assets/BillDomonkos/domonkos2.gif",
+ 	"assets/BillDomonkos/domonkos3.gif",
+	"assets/BillDomonkos/domonkos4.gif",
+	"assets/BillDomonkos/domonkos5.gif",
+    "assets/archery/archery2.gif",
+"assets/archery/archery3.gif",
+ 	"assets/archery/archery4.gif",
+	"assets/archery/archery5.gif",
+    "assets/alcrego/alcrego2.gif",
+ 	"assets/alcrego/alcrego3.gif",
+            "assets/alcrego/alcrego4.gif",
+            "assets/alcrego/alcrego5.gif",
+            "assets/adampizurny/adampizurny1.gif",
+"assets/adampizurny/adampizurny2.gif",
+ 	"assets/adampizurny/adampizurny3.gif",
+            "assets/adampizurny/adampizurny4.gif",
+            "assets/adampizurny/adampizurny5.gif",
+
+
+
+
+       
         // Aggiungi gli altri percorsi delle tue GIF qui
       ];
 
       const numGifs = gifPaths.length;
       const gifContainer = document.body;
 
-      for (let i = 0; i < numGifs; i++) {
+      for (let i = 0; i < 50; i++) {
         const gif = document.createElement('img');
         const randomPathIndex = getRandomNumber(0, numGifs - 1);
         gif.src = gifPaths[randomPathIndex];
         gif.classList.add('random-gif');
 
         const size = getRandomNumber(50, 150); // Dimensione casuale tra 50 e 150 pixel
-        gif.style.width = `${size}px`;
-        gif.style.height = `${size}px`;
+        gif.style.maxWidth = `${size}px`;
+        
 
         // Posiziona casualmente le GIF evitando sovrapposizioni
         let x, y;
