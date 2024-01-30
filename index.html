@@ -35,7 +35,45 @@
         padding: 0%;
       }
 
-
+      @keyframes rainbow {
+        100%,
+        0% {
+          color: rgb(255, 0, 0);
+        }
+        8% {
+          color: rgb(255, 127, 0);
+        }
+        16% {
+          color: rgb(255, 255, 0);
+        }
+        25% {
+          color: rgb(127, 255, 0);
+        }
+        33% {
+          color: rgb(0, 255, 0);
+        }
+        41% {
+          color: rgb(0, 255, 127);
+        }
+        50% {
+          color: rgb(0, 255, 255);
+        }
+        58% {
+          color: rgb(0, 127, 255);
+        }
+        66% {
+          color: rgb(0, 0, 255);
+        }
+        75% {
+          color: rgb(127, 0, 255);
+        }
+        83% {
+          color: rgb(255, 0, 255);
+        }
+        91% {
+          color: rgb(255, 0, 127);
+        }
+      }
 
     a:link,
     a:visited {
@@ -44,11 +82,7 @@
     text-shadow: white; /* Imposta il colore desiderato per i link non visitati e visitati */
     }
 
-    a:hover,
-    a:active {
-    color: red; /* Imposta il colore desiderato per i link quando il mouse è sopra di essi o quando sono attivi (cliccati) */
-    text-decoration: none; /* Rimuovi la sottolineatura quando il mouse è sopra il link o quando è attivo */
-    }
+   
 
     .archive {
       position: fixed;
@@ -63,7 +97,15 @@
       text-align: center;
       font-weight: bolder;
       line-height: -2;
+      
     }
+
+    .archive a:hover{
+      animation: rainbow 2.5s linear;
+        animation-iteration-count: infinite;
+    }
+    
+
 
     .storia {
       position: fixed;
