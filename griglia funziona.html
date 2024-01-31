@@ -1559,7 +1559,9 @@ image.id
 <img src="${image.src}" alt="Image" onclick="showSlideshow(${
   image.id
 })">
-<h3>${image.title}</h3>
+<h3 alt="Image" onclick="showSlideshow(${
+  image.id
+})">${image.title}</h3>
 </div>`
 )
 .join("");
